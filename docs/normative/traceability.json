@@ -1,0 +1,2578 @@
+{
+  "schemaVersion": 1,
+  "title": "Rechenkern und normative Nachweise",
+  "sourceWorkbookSha256": "d84dd1400ebbf5d604187ed44753fc439d6bcc08e1d19f98396421099c10306e",
+  "targetProfile": {
+    "status": "current-only",
+    "deploymentReady": false,
+    "asOf": "2026-10-30",
+    "mandate": "Nur aktuell anwendbare Verfahren, AMEV und Bundesbau/Bundeswehr berücksichtigen. Keine historischen EnEV-/LU-Rechenprofile als Anwendungspfad.",
+    "workbook": "Nur historische Vergleichsquelle: EnerCalC 6.1.177; keine fachliche Sollvorgabe.",
+    "statutoryReference": "Öffentlich abgerufene §§ 20/21 nennen ausdrücklich DIN V 18599:2018-09. Gesetzlich referenzierte Ausgabe und neueste Normveröffentlichung sind getrennt zu prüfen.",
+    "publicLawName": "GModG laut abgerufener konsolidierter Fassung, Änderungsstand 23.07.2026; URL-Pfad weiterhin /geg/.",
+    "reviewRequiredFrom": "2027-01-01",
+    "editionPolicy": "Nur aktuell anwendbar, nicht pauschal neueste DIN-Ausgabe: Rechtsverweis, Übergang, Einführung und Auftraggeberanforderungen bestimmen die verwendbare Fassung."
+  },
+  "rules": [
+    {
+      "id": "heated-area",
+      "title": "Energiebezugsfläche beheizter Zonen",
+      "expression": "A_EBF = Σ A_zone für beheizte Zonen",
+      "sampleInput": {
+        "zones": [
+          {
+            "area": 462,
+            "heated": true
+          },
+          {
+            "area": 66,
+            "heated": true
+          },
+          {
+            "area": 194,
+            "heated": true
+          },
+          {
+            "area": 66,
+            "heated": true
+          },
+          {
+            "area": 33,
+            "heated": true
+          },
+          {
+            "area": 258,
+            "heated": false
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "key": "area",
+          "label": "Beheizte Bezugsfläche",
+          "unit": "m²"
+        },
+        {
+          "key": "totalArea",
+          "label": "Gesamte Zonenfläche",
+          "unit": "m²"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "Eingabe",
+          "cell": "D85",
+          "formula": "=SUMIF(DATA!E151:O151,JA,E83:O83)",
+          "savedValue": 821
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "zones.0.area",
+          "label": "Zone 1: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "E83"
+          }
+        },
+        {
+          "path": "zones.0.heated",
+          "label": "Zone 1: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "E151"
+          }
+        },
+        {
+          "path": "zones.1.area",
+          "label": "Zone 2: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "F83"
+          }
+        },
+        {
+          "path": "zones.1.heated",
+          "label": "Zone 2: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "F151"
+          }
+        },
+        {
+          "path": "zones.2.area",
+          "label": "Zone 3: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "G83"
+          }
+        },
+        {
+          "path": "zones.2.heated",
+          "label": "Zone 3: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "G151"
+          }
+        },
+        {
+          "path": "zones.3.area",
+          "label": "Zone 4: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "H83"
+          }
+        },
+        {
+          "path": "zones.3.heated",
+          "label": "Zone 4: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "H151"
+          }
+        },
+        {
+          "path": "zones.4.area",
+          "label": "Zone 5: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "I83"
+          }
+        },
+        {
+          "path": "zones.4.heated",
+          "label": "Zone 5: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "I151"
+          }
+        },
+        {
+          "path": "zones.5.area",
+          "label": "Zone 6: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "J83"
+          }
+        },
+        {
+          "path": "zones.5.heated",
+          "label": "Zone 6: beheizt",
+          "unit": "",
+          "source": {
+            "sheet": "DATA",
+            "cell": "J151"
+          }
+        }
+      ],
+      "scopeLimit": "Reproduziert die Auswahl beheizter Zonen. Die normative Gleichsetzung mit anderen Flächenbezügen ist nicht freigegeben.",
+      "requirements": [
+        "N01"
+      ],
+      "workbookReportedReference": "Eingabe!D85 / SUMIF",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 1
+      },
+      "sampleExpected": {
+        "area": 821,
+        "totalArea": 1079
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "direct-envelope",
+      "title": "Direkte Hüllflächensummen",
+      "expression": "A = A_Fenster + A_Wand,opak + A_Wand,Erdreich + A_Dach,opak + A_Boden; A/V",
+      "sampleInput": {
+        "facadeGross": 694,
+        "facadeWindows": 250.9,
+        "groundWalls": 54.6,
+        "roofGross": 294,
+        "roofWindows": 0,
+        "floor": 294,
+        "volume": 2996
+      },
+      "outputs": [
+        {
+          "key": "walls",
+          "label": "Opake Außenwände",
+          "unit": "m²"
+        },
+        {
+          "key": "windows",
+          "label": "Fenster gesamt",
+          "unit": "m²"
+        },
+        {
+          "key": "roof",
+          "label": "Opakes Dach",
+          "unit": "m²"
+        },
+        {
+          "key": "area",
+          "label": "Hüllfläche",
+          "unit": "m²"
+        },
+        {
+          "key": "compactness",
+          "label": "Kompaktheit A/V",
+          "unit": "m⁻¹"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "Eingabe",
+          "cell": "D41",
+          "formula": "=SUM(D36:D40)",
+          "savedValue": 1336.6
+        },
+        {
+          "sheet": "Eingabe",
+          "cell": "D43",
+          "formula": "=IF(ISNUMBER(D41/D42),D41/D42,Nicht_vorhanden)",
+          "savedValue": 0.446128170894526
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "facadeGross",
+          "label": "Fassaden brutto",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "D34"
+          }
+        },
+        {
+          "path": "facadeWindows",
+          "label": "Fassadenfenster gesamt",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "D36"
+          }
+        },
+        {
+          "path": "groundWalls",
+          "label": "Wände gegen Erdreich/unbeheizt",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "D38"
+          }
+        },
+        {
+          "path": "roofGross",
+          "label": "Dach brutto (Beispiel-Flachdach)",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "I28"
+          }
+        },
+        {
+          "path": "roofWindows",
+          "label": "Dachfenster",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "I36"
+          }
+        },
+        {
+          "path": "floor",
+          "label": "Boden",
+          "unit": "m²",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "I28"
+          }
+        },
+        {
+          "path": "volume",
+          "label": "Beheiztes Volumen",
+          "unit": "m³",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "D42"
+          }
+        }
+      ],
+      "scopeLimit": "Direkte Flächensummen, kein Ersatz für das vereinfachte Fassadenverfahren, die Zonenzuweisung oder eine Prüfung der normativen Bilanzgrenze.",
+      "requirements": [
+        "N01"
+      ],
+      "workbookReportedReference": "Eingabe!D36:D43",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 1
+      },
+      "sampleExpected": {
+        "area": 1336.6,
+        "compactness": 0.446128170894526,
+        "walls": 443.1,
+        "windows": 250.9,
+        "roof": 294
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "window-u",
+      "title": "Fenster-U-Wert mit expliziter Geometrie",
+      "expression": "Uw = (Ag·Ug + Af·Uf + lg·ψ) / (Ag + Af)",
+      "sampleInput": {
+        "glassArea": 0.75,
+        "frameArea": 0.25,
+        "ug": 1.1,
+        "uf": 1.1799999999999997,
+        "edgeLength": 3,
+        "psi": 0.06
+      },
+      "outputs": [
+        {
+          "key": "u",
+          "label": "Fenster-U-Wert",
+          "unit": "W/(m²K)"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "Eingabe",
+          "cell": "E58",
+          "formula": "=IF(ISNUMBER(FR*VLOOKUP(DATA!E125,Konst!$B$70:$C$92,2,FALSE)+(1-FR)*E56+3*E57),FR*VLOOKUP(DATA!E125,Konst!$B$70:$C$92,2,FALSE)+(1-FR)*E56+3*E57,Nicht_vorhanden)",
+          "savedValue": 1.3
+        },
+        {
+          "sheet": "Konst",
+          "cell": "D167",
+          "formula": "=ROUND(J170,2)",
+          "savedValue": 0.75
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "glassArea",
+          "label": "Glasfläche des Modellfensters",
+          "unit": "m²",
+          "source": null
+        },
+        {
+          "path": "frameArea",
+          "label": "Rahmenfläche des Modellfensters",
+          "unit": "m²",
+          "source": null
+        },
+        {
+          "path": "ug",
+          "label": "Ug",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1037"
+          }
+        },
+        {
+          "path": "uf",
+          "label": "Uf",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "E56"
+          }
+        },
+        {
+          "path": "edgeLength",
+          "label": "Glasrandlänge des Modellfensters",
+          "unit": "m",
+          "source": null
+        },
+        {
+          "path": "psi",
+          "label": "Randverbund ψ",
+          "unit": "W/(mK)",
+          "source": {
+            "sheet": "Eingabe",
+            "cell": "E57"
+          }
+        }
+      ],
+      "scopeLimit": "Der Beispielwert bildet FR=0,75 und den Excel-Zuschlag 3·ψ über ein Modellfenster von 1 m² ab. Die Randlänge 3 m ist eine ausdrücklich gesetzte Modellannahme, keine geprüfte normative Standardgeometrie.",
+      "requirements": [
+        "N04",
+        "N10"
+      ],
+      "workbookReportedReference": "Eingabe!E58: FR·Ug + (1−FR)·Uf + 3·ψ",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 1
+      },
+      "sampleExpected": {
+        "u": 1.3
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "transmission",
+      "title": "Transmissionsleitwert aus zugewiesenen Bauteilen",
+      "expression": "H_T = Σ(A_i·U_i·F_i) + ΔU_WB·Σ(A_i·F_i)",
+      "sampleInput": {
+        "components": [
+          {
+            "area": 141.18855054811206,
+            "u": 1.3,
+            "reduction": 1
+          },
+          {
+            "area": 63.92594397076736,
+            "u": 0.28,
+            "reduction": 1
+          },
+          {
+            "area": 55.878928136419,
+            "u": 0.28,
+            "reduction": 1
+          },
+          {
+            "area": 51.039464068209504,
+            "u": 0.28,
+            "reduction": 1
+          },
+          {
+            "area": 78.50060901339829,
+            "u": 0.28,
+            "reduction": 1
+          },
+          {
+            "area": 165.442143727162,
+            "u": 0.2,
+            "reduction": 1
+          },
+          {
+            "area": 196.1671132764921,
+            "u": 0.35,
+            "reduction": 0.6
+          }
+        ],
+        "bridgeDeltaU": 0.05
+      },
+      "outputs": [
+        {
+          "key": "coefficient",
+          "label": "Transmissionsleitwert",
+          "unit": "W/K"
+        },
+        {
+          "key": "base",
+          "label": "Bauteilanteil",
+          "unit": "W/K"
+        },
+        {
+          "key": "bridge",
+          "label": "Wärmebrückenanteil",
+          "unit": "W/K"
+        },
+        {
+          "key": "weightedArea",
+          "label": "Reduzierte Bezugsfläche",
+          "unit": "m²"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F1053",
+          "formula": "=SUMPRODUCT(F1017:F1023,F1045:F1051,$E$1017:$E$1023)+F1052*(SUMPRODUCT(F1017:F1023,$E$1017:$E$1023))",
+          "savedValue": 361.32901827040195
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "components.0.area",
+          "label": "Fenster alle : Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1017"
+          }
+        },
+        {
+          "path": "components.0.u",
+          "label": "Fenster alle : U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1045"
+          }
+        },
+        {
+          "path": "components.0.reduction",
+          "label": "Fenster alle : Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1017"
+          }
+        },
+        {
+          "path": "components.1.area",
+          "label": "opake Fläche Süd: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1018"
+          }
+        },
+        {
+          "path": "components.1.u",
+          "label": "opake Fläche Süd: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1046"
+          }
+        },
+        {
+          "path": "components.1.reduction",
+          "label": "opake Fläche Süd: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1018"
+          }
+        },
+        {
+          "path": "components.2.area",
+          "label": "opake Fläche Ost: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1019"
+          }
+        },
+        {
+          "path": "components.2.u",
+          "label": "opake Fläche Ost: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1047"
+          }
+        },
+        {
+          "path": "components.2.reduction",
+          "label": "opake Fläche Ost: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1019"
+          }
+        },
+        {
+          "path": "components.3.area",
+          "label": "opake Fläche West: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1020"
+          }
+        },
+        {
+          "path": "components.3.u",
+          "label": "opake Fläche West: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1048"
+          }
+        },
+        {
+          "path": "components.3.reduction",
+          "label": "opake Fläche West: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1020"
+          }
+        },
+        {
+          "path": "components.4.area",
+          "label": "opake Fläche Nord: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1021"
+          }
+        },
+        {
+          "path": "components.4.u",
+          "label": "opake Fläche Nord: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1049"
+          }
+        },
+        {
+          "path": "components.4.reduction",
+          "label": "opake Fläche Nord: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1021"
+          }
+        },
+        {
+          "path": "components.5.area",
+          "label": "opake Fläche Horizontal: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1022"
+          }
+        },
+        {
+          "path": "components.5.u",
+          "label": "opake Fläche Horizontal: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1050"
+          }
+        },
+        {
+          "path": "components.5.reduction",
+          "label": "opake Fläche Horizontal: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1022"
+          }
+        },
+        {
+          "path": "components.6.area",
+          "label": "Fußboden: Fläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1023"
+          }
+        },
+        {
+          "path": "components.6.u",
+          "label": "Fußboden: U-Wert",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1051"
+          }
+        },
+        {
+          "path": "components.6.reduction",
+          "label": "Fußboden: Reduktion",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "E1023"
+          }
+        },
+        {
+          "path": "bridgeDeltaU",
+          "label": "Wärmebrückenzuschlag",
+          "unit": "W/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1052"
+          }
+        }
+      ],
+      "scopeLimit": "Übernimmt bereits zugewiesene CalC-Bauteile. Hüllflächenzuweisung und der reduzierte Flächenbezug des pauschalen Wärmebrückenzuschlags sind gesondert normativ zu prüfen. Die direkte Hülle wird hier nicht automatisch umverteilt.",
+      "requirements": [
+        "N01",
+        "N02",
+        "N04",
+        "N10"
+      ],
+      "workbookReportedReference": "CalC!F1053; DIN-Abschnitt aus Datei nicht editionssicher",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 22
+      },
+      "sampleExpected": {
+        "coefficient": 361.32901827040195
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "heat-capacity",
+      "title": "Wirksame Wärmespeicherkapazität",
+      "expression": "C_wirk = c_wirk · A / 1000",
+      "sampleInput": {
+        "specificCapacity": 90,
+        "area": 462
+      },
+      "outputs": [
+        {
+          "key": "capacity",
+          "label": "Wirksame Kapazität",
+          "unit": "kWh/K"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F1060",
+          "formula": "=F1059*F$327/1000",
+          "savedValue": 41.58
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "specificCapacity",
+          "label": "c_wirk",
+          "unit": "Wh/(m²K)",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1059"
+          }
+        },
+        {
+          "path": "area",
+          "label": "Bezugsfläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F327"
+          }
+        }
+      ],
+      "scopeLimit": "Umrechnung mit vorgegebenem c_wirk. Die Einstufung leicht/mittel/schwer und die zulässige Bezugsfläche bleiben prüfpflichtig.",
+      "requirements": [
+        "N02"
+      ],
+      "workbookReportedReference": "CalC-Zeile 1056 nennt Kapitel 6.7.1",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 22
+      },
+      "sampleExpected": {
+        "capacity": 41.58
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "air-transfer",
+      "title": "Luftwechselbezogener Wärmeleitwert",
+      "expression": "H_v = n · V · ρc",
+      "sampleInput": {
+        "airChanges": 0.08288074410364302,
+        "volume": 1270.5,
+        "airCapacity": 0.34
+      },
+      "outputs": [
+        {
+          "key": "coefficient",
+          "label": "Lüftungsleitwert",
+          "unit": "W/K"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F1283",
+          "formula": "=F1282*F$328*CPLUFT",
+          "savedValue": 35.801995030450676
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "airChanges",
+          "label": "Wirksamer Luftwechsel",
+          "unit": "h⁻¹",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1282"
+          }
+        },
+        {
+          "path": "volume",
+          "label": "Luftvolumen",
+          "unit": "m³",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F328"
+          }
+        },
+        {
+          "path": "airCapacity",
+          "label": "Volumetrische Wärmekapazität",
+          "unit": "Wh/(m³K)",
+          "source": {
+            "sheet": "Konst",
+            "cell": "D176"
+          }
+        }
+      ],
+      "scopeLimit": "Nur Multiplikation der expliziten Randbedingungen. Keine eigenständige Bestimmung von Infiltration, n₅₀-Umrechnung, Mindestaußenluft, WRG oder Anlagenbetrieb.",
+      "requirements": [
+        "N02",
+        "N03"
+      ],
+      "workbookReportedReference": "CalC!C1283 meldet H_v_inf (58), Ausgabe ungeprüft",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 22
+      },
+      "sampleExpected": {
+        "coefficient": 35.801995030450676
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "thermal-response",
+      "title": "Zeitkonstante und numerischer Parameter",
+      "expression": "τ = C_wirk · 1000 / H; a = a₀ + τ/τ₀",
+      "sampleInput": {
+        "capacity": 41.58,
+        "transfer": 780.6680133008526,
+        "a0": 1,
+        "tau0": 16
+      },
+      "outputs": [
+        {
+          "key": "tau",
+          "label": "Zeitkonstante",
+          "unit": "h"
+        },
+        {
+          "key": "a",
+          "label": "Numerischer Parameter",
+          "unit": "1"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F2005",
+          "formula": "=IFERROR(F$1060*1000/F2004,0)",
+          "savedValue": 53.262077210246815
+        },
+        {
+          "sheet": "CalC",
+          "cell": "F2006",
+          "formula": "=a_0+F2005/Tau_0",
+          "savedValue": 4.328879825640426
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "capacity",
+          "label": "Kapazität",
+          "unit": "kWh/K",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1060"
+          }
+        },
+        {
+          "path": "transfer",
+          "label": "Gesamt-Wärmetransferkoeffizient",
+          "unit": "W/K",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2004"
+          }
+        },
+        {
+          "path": "a0",
+          "label": "a₀",
+          "unit": "1",
+          "source": {
+            "sheet": "Konst",
+            "cell": "D150"
+          }
+        },
+        {
+          "path": "tau0",
+          "label": "τ₀",
+          "unit": "h",
+          "source": {
+            "sheet": "Konst",
+            "cell": "D151"
+          }
+        }
+      ],
+      "scopeLimit": "H, a₀ und τ₀ werden explizit übergeben. Bei H=0 wird ein Fehler gemeldet, statt wie Excel pauschal 0 zu setzen. Zugehörige Komponenten und Normbedingungen sind offen.",
+      "requirements": [
+        "N02"
+      ],
+      "workbookReportedReference": "CalC: τ (22,136), a (142) – aus Dateibeschriftung, nicht gegen Normtext geprüft",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 144
+      },
+      "sampleExpected": {
+        "tau": 53.262077210246815,
+        "a": 4.328879825640426
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "heating-utilization",
+      "title": "Ausnutzungsgrad im Heizfall",
+      "expression": "η = (1−γ^a)/(1−γ^(a+1)); bei γ=1: a/(a+1); Excel-Begrenzung separat",
+      "sampleInput": {
+        "gamma": 0.39466032256033806,
+        "a": 4.328879825640426,
+        "limitThreshold": 0.01
+      },
+      "outputs": [
+        {
+          "key": "raw",
+          "label": "Ausnutzungsgrad roh",
+          "unit": "1"
+        },
+        {
+          "key": "limited",
+          "label": "Ausnutzungsgrad begrenzt",
+          "unit": "1"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F2034",
+          "formula": "=IF(F2015=0,0,IF(F2033<>1,(1-F2033^F2006)/(1-F2033^(F2006+1)),F2006/(F2006+1)))",
+          "savedValue": 0.989106369902838
+        },
+        {
+          "sheet": "CalC",
+          "cell": "F2035",
+          "formula": "=IF(1-(F2034*F2033)<0.01,1/F2033,F2034)",
+          "savedValue": 0.989106369902838
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "gamma",
+          "label": "Gewinn-/Verlustverhältnis γ",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2033"
+          }
+        },
+        {
+          "path": "a",
+          "label": "a",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2006"
+          }
+        },
+        {
+          "path": "limitThreshold",
+          "label": "Excel-Begrenzungsschwelle",
+          "unit": "1",
+          "source": null
+        }
+      ],
+      "scopeLimit": "Definierter numerisch stabiler Grenzfall γ=1. Die 1-%-Begrenzung und die Ermittlung von γ bei nichtpositiven Senken sind nicht normativ bestätigt.",
+      "requirements": [
+        "N02",
+        "N10"
+      ],
+      "workbookReportedReference": "CalC: Gleichungen (140),(141),(144); Ausgabe nicht bestätigt",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 144
+      },
+      "sampleExpected": {
+        "raw": 0.989106369902838,
+        "limited": 0.989106369902838
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "heating-part",
+      "title": "Heizwärme einer Nutzungs-Teilperiode",
+      "expression": "q_h = max(0, (Q_sink − η·Q_source) · d / A)",
+      "sampleInput": {
+        "losses": 267.005177893357,
+        "gains": 105.37634963267271,
+        "utilization": 0.989106369902838,
+        "days": 21.232876712328768,
+        "area": 462
+      },
+      "outputs": [
+        {
+          "key": "specificHeat",
+          "label": "Heizwärme Teilperiode",
+          "unit": "kWh/m²"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "CalC",
+          "cell": "F2036",
+          "formula": "=IF(ISNUMBER((F2015-F2035*F2032)/F$327*F1988),MAX((F2015-F2035*F2032)/F$327*F1988,0),0)",
+          "savedValue": 7.480993204459062
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "losses",
+          "label": "Senken",
+          "unit": "kWh/d",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2015"
+          }
+        },
+        {
+          "path": "gains",
+          "label": "Quellen",
+          "unit": "kWh/d",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2032"
+          }
+        },
+        {
+          "path": "utilization",
+          "label": "Ausnutzungsgrad",
+          "unit": "1",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F2035"
+          }
+        },
+        {
+          "path": "days",
+          "label": "Gewichtete Nutzungstage",
+          "unit": "d",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F1988"
+          }
+        },
+        {
+          "path": "area",
+          "label": "Zonenfläche",
+          "unit": "m²",
+          "source": {
+            "sheet": "CalC",
+            "cell": "F327"
+          }
+        }
+      ],
+      "scopeLimit": "Nur Nutzungs-Teilperiode mit übergebenen Senken, Quellen und Tagen. Nichtnutzungszeit, gespeicherte Wärme, Temperaturen, Kühlung und Gesamtmonatsbilanz fehlen ausdrücklich.",
+      "requirements": [
+        "N02",
+        "N03"
+      ],
+      "workbookReportedReference": "CalC!F2036; Q_sink (11), Q_source (16) sind vorgelagerte Berechnungen",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 144
+      },
+      "sampleExpected": {
+        "specificHeat": 7.480993204459062
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "apply-factor",
+      "title": "Energetische Umrechnung mit explizitem Faktor",
+      "expression": "Q_result = Q_input · f",
+      "sampleInput": {
+        "energy": 52.85845537587964,
+        "factor": 1.244052938386451
+      },
+      "outputs": [
+        {
+          "key": "energy",
+          "label": "Umgerechnete Energie",
+          "unit": "kWh/(m²a)"
+        }
+      ],
+      "workbook": [
+        {
+          "sheet": "DATA",
+          "cell": "C7",
+          "formula": "=IF(ISNUMBER(A7*F7),A7*F7,0)",
+          "savedValue": 65.75871672893216
+        }
+      ],
+      "inputFields": [
+        {
+          "path": "energy",
+          "label": "Nutzenergie Heizen",
+          "unit": "kWh/(m²a)",
+          "source": {
+            "sheet": "DATA",
+            "cell": "A7"
+          }
+        },
+        {
+          "path": "factor",
+          "label": "Excel-Gesamtfaktor",
+          "unit": "1",
+          "source": {
+            "sheet": "DATA",
+            "cell": "F7"
+          }
+        }
+      ],
+      "scopeLimit": "Der Beispiel-Gesamtfaktor enthält Anlagen- und Primärenergiewirkungen. Ein geprüfter Multiplikationskern bestätigt nicht die Herkunft oder Zulässigkeit des Faktors und keine Gesamtbilanz.",
+      "requirements": [
+        "N01",
+        "N07"
+      ],
+      "workbookReportedReference": "DATA!C7, Gesamtbilanz!P411",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 1
+      },
+      "sampleExpected": {
+        "energy": 65.75871672893216
+      },
+      "sampleReferenceKind": "saved-excel-cache",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "emissions",
+      "title": "Endenergie in Treibhausgasmenge umrechnen",
+      "expression": "m_CO₂eq [kg] = Q_end [kWh] · f [g/kWh] / 1000",
+      "sampleInput": {
+        "energy": 1000,
+        "factor": 560
+      },
+      "outputs": [
+        {
+          "key": "emissions",
+          "label": "Treibhausgasmenge",
+          "unit": "kg CO₂-Äq."
+        }
+      ],
+      "workbook": [],
+      "inputFields": [
+        {
+          "path": "energy",
+          "label": "Endenergie",
+          "unit": "kWh",
+          "source": null
+        },
+        {
+          "path": "factor",
+          "label": "Emissionsfaktor",
+          "unit": "g CO₂-Äq./kWh",
+          "source": null
+        }
+      ],
+      "scopeLimit": "Öffentlich belegter Tabellenwert für netzbezogenen Strom und isolierte Multiplikation. Keine Prüfung des vorgelagerten Endenergiebedarfs, der Bilanzgrenze oder der gesetzlichen Gesamtanwendung.",
+      "requirements": [
+        "N01"
+      ],
+      "workbookReportedReference": "Öffentlich abgerufene Anlage 9 Nr. 1a / 3, Tabellenzeile 12",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "fixtures-prepared",
+        "caseCount": 1
+      },
+      "sampleExpected": {
+        "emissions": 560
+      },
+      "sampleReferenceKind": "independent-arithmetic",
+      "executionMode": "reference-only"
+    },
+    {
+      "id": "zone-allocation",
+      "title": "Hüllflächen und Bilanzgrenzen der Zonen",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N01",
+        "N14"
+      ],
+      "workbookReportedReference": "DATA!E104:O115; CalC!F299:P345",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Bauteilflächen je Orientierung und Randbedingung [m²]",
+        "Zonenflächen [m²], Gebäudetyp und zulässiges Zuweisungsverfahren"
+      ],
+      "outputContract": [
+        "Bauteilflächen je Zone und Randbedingung [m²]",
+        "Geprüfte Flächen-/Bilanzgrenzen"
+      ]
+    },
+    {
+      "id": "profiles-climate",
+      "title": "Nutzungs- und Klimarandbedingungen",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N03",
+        "N13",
+        "N14"
+      ],
+      "workbookReportedReference": "Nutzungen, Wetterdaten, Tab.Listen",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Nutzungs-ID, Standort und Rechts-/Normstichtag",
+        "Aktueller freigegebener Profil-/Klima-Datensatz"
+      ],
+      "outputContract": [
+        "Nutzungs-/Betriebszeiten [h,d] und Solltemperaturen [°C]",
+        "Monatstemperaturen [°C], Strahlung [W/m²] und Luftmengenrandbedingungen"
+      ]
+    },
+    {
+      "id": "monthly-balance",
+      "title": "Vollständige Heiz-/Kühl-Monatsbilanz",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N02",
+        "N03",
+        "N09",
+        "N12",
+        "N13",
+        "N14"
+      ],
+      "workbookReportedReference": "CalC!F1984:P3960 und Monatsaggregation",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Geometrie und geprüfte Bauteil-/Lüftungsdaten",
+        "Aktuelle Nutzungs-/Klima-/Regelungsdaten, Quellen und Senken"
+      ],
+      "outputContract": [
+        "Nutzenergie Heizen/Kühlen je Zone/Monat [kWh]",
+        "Jahreswerte und eindeutig definierte spezifische Kennwerte [kWh/(m²a)]"
+      ]
+    },
+    {
+      "id": "lighting-daylight",
+      "title": "Tageslicht und Beleuchtung",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N05",
+        "N12"
+      ],
+      "workbookReportedReference": "CalC bis Zeile 1008",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Raum-/Fenstergeometrie, Verglasung, Verschattung und Nutzungszeiten",
+        "Aktuelle Leuchten-/Steuerungsdaten und Anforderungen an die Beleuchtung"
+      ],
+      "outputContract": [
+        "Beleuchtungs-Endenergie je Zone/Monat [kWh]",
+        "Zuordnung interner Wärmequellen zur thermischen Bilanz"
+      ]
+    },
+    {
+      "id": "ventilation-system",
+      "title": "Lüftungsanlage, WRG und Hilfsenergie",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N06",
+        "N09",
+        "N12",
+        "N14"
+      ],
+      "workbookReportedReference": "CalC, Tab.Listen, Gesamtbilanz",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Nutzungsabhängige Luftmengen [m³/h], Betrieb [h], WRG und Druck-/Ventilatorparameter",
+        "Einführung der AMEV-Anforderungen und projektspezifische Bundeswehr-Randbedingungen"
+      ],
+      "outputContract": [
+        "Hilfs-/Ventilatorenergie [kWh]",
+        "Wärme-/Kältebeiträge mit definierter Bilanzgrenze"
+      ]
+    },
+    {
+      "id": "cooling-system",
+      "title": "Kälteerzeugung und Verteilung",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N06",
+        "N12"
+      ],
+      "workbookReportedReference": "Tab.Kälte",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Nutzkältebedarf [kWh], System, Temperaturen und Betriebsweise",
+        "Aktuelle Effizienz-/Verteilungs-/Hilfsenergiekennwerte sowie eingeführte AMEV-Anforderungen"
+      ],
+      "outputContract": [
+        "Endenergie nach Energieträger [kWh]",
+        "Rückkühl-/Hilfsenergie und nachvollziehbare Anlagenverluste"
+      ]
+    },
+    {
+      "id": "heat-dhw-system",
+      "title": "Heizung, Warmwasser und Solarthermie",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N07",
+        "N12",
+        "N14"
+      ],
+      "workbookReportedReference": "Tab.Wärme, Tab.WW, Tab.Solar",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Heiz-/TWW-Nutzenergie [kWh], Speicher/Verteilung/Übergabe und Erzeuger",
+        "Betrieb, Temperaturniveau, Solarthermie und aktuelle Randbedingungen"
+      ],
+      "outputContract": [
+        "Endenergie nach Energieträger [kWh]",
+        "Hilfsenergie, Verluste und zu berücksichtigende Gewinne"
+      ]
+    },
+    {
+      "id": "renewable-balance",
+      "title": "PV, WEA, KWK, Speicher und Stromanrechnung",
+      "expression": null,
+      "sampleInput": null,
+      "inputFields": [],
+      "outputs": [],
+      "workbook": [],
+      "scopeLimit": "Noch nicht migriert. Benötigte Verfahrens-/Normbelege müssen vor der Freigabe geklärt werden.",
+      "requirements": [
+        "N08",
+        "N13"
+      ],
+      "workbookReportedReference": "Tab.PV, Tab.WEA, Gesamtbilanz, nZEB-Bilanzen",
+      "normativeReview": {
+        "status": "source-required",
+        "edition": null,
+        "evidence": [],
+        "reviewer": null
+      },
+      "technicalValidation": {
+        "kind": "not-implemented",
+        "caseCount": 0
+      },
+      "executionMode": "current-blocked",
+      "inputContract": [
+        "Monats-/Zeitreihen der Erzeugung [kWh], Bedarf [kWh] und Speicherzustände",
+        "Aktuell zulässiges Anrechnungsverfahren und projektspezifische Versorgungskonfiguration"
+      ],
+      "outputContract": [
+        "Erzeugung, Eigenverbrauch, Bezug, Einspeisung und Verluste [kWh]",
+        "Methodengerechte Anrechnung; keine doppelte Energiegutschrift"
+      ]
+    },
+    {
+      "id": "current-primary",
+      "title": "Primärenergie: aktueller Einzelenergieträger",
+      "executionMode": "current-leaf",
+      "expression": "Qp = Qend · fp,nren",
+      "sampleInput": {
+        "energy": 1000,
+        "carrier": "grid-electricity",
+        "asOf": "2026-10-30"
+      },
+      "inputFields": [
+        {
+          "path": "energy",
+          "label": "Bereits bestimmter Endenergiebedarf",
+          "unit": "kWh",
+          "source": null
+        },
+        {
+          "path": "carrier",
+          "label": "Energieträger",
+          "unit": "",
+          "type": "carrier",
+          "source": null
+        },
+        {
+          "path": "asOf",
+          "label": "Geprüfter Quellenstichtag",
+          "unit": "",
+          "type": "date",
+          "source": null
+        }
+      ],
+      "outputs": [
+        {
+          "key": "primaryEnergy",
+          "label": "Umgerechnete Menge",
+          "unit": "kWh"
+        }
+      ],
+      "workbook": [],
+      "requirements": [],
+      "scopeLimit": "Isolierte gesetzliche Umrechnung mit öffentlich belegten Faktoren. Der Endenergiebedarf muss bereits nach dem einschlägigen Verfahren bestimmt sein; dessen Ermittlung, weitere Energieträger/Sonderfälle und die Gebäude-/Bundeswehr-Gesamtprüfung sind nicht freigegeben.",
+      "workbookReportedReference": "Kein Übernehmen des alten Excel-Sammelfaktors. Aktuelle Energieträger-IDs und öffentliche Originalquelle.",
+      "normativeReview": {
+        "status": "verified",
+        "scope": "leaf-only",
+        "edition": "Öffentlich abgerufene konsolidierte Fassung, Stand 23.07.2026 / Abruf 30.10.2026",
+        "evidence": [
+          {
+            "source": "geg22",
+            "section": "§ 22 Abs. 1 in Verbindung mit Anlage 4; geprüfter Teilkatalog"
+          },
+          {
+            "source": "geg4",
+            "section": "Tabellenzeilen im explizit geprüften Teilkatalog"
+          }
+        ],
+        "reviewer": "Codex – direkter Text-/Tabellenabgleich, nur angegebener Einzelbaustein"
+      },
+      "technicalValidation": {
+        "kind": "public-source-and-unit-tests",
+        "caseCount": 4
+      }
+    },
+    {
+      "id": "current-emissions",
+      "title": "Treibhausgase: aktueller Einzelenergieträger",
+      "executionMode": "current-leaf",
+      "expression": "m_CO₂eq [kg] = Qend [kWh] · f [g/kWh] / 1000",
+      "sampleInput": {
+        "energy": 1000,
+        "carrier": "grid-electricity",
+        "asOf": "2026-10-30"
+      },
+      "inputFields": [
+        {
+          "path": "energy",
+          "label": "Bereits bestimmter Endenergiebedarf",
+          "unit": "kWh",
+          "source": null
+        },
+        {
+          "path": "carrier",
+          "label": "Energieträger",
+          "unit": "",
+          "type": "carrier",
+          "source": null
+        },
+        {
+          "path": "asOf",
+          "label": "Geprüfter Quellenstichtag",
+          "unit": "",
+          "type": "date",
+          "source": null
+        }
+      ],
+      "outputs": [
+        {
+          "key": "emissions",
+          "label": "Umgerechnete Menge",
+          "unit": "kg CO₂-Äq."
+        }
+      ],
+      "workbook": [],
+      "requirements": [],
+      "scopeLimit": "Isolierte gesetzliche Umrechnung mit öffentlich belegten Faktoren. Der Endenergiebedarf muss bereits nach dem einschlägigen Verfahren bestimmt sein; dessen Ermittlung, weitere Energieträger/Sonderfälle und die Gebäude-/Bundeswehr-Gesamtprüfung sind nicht freigegeben.",
+      "workbookReportedReference": "Kein Übernehmen des alten Excel-Sammelfaktors. Aktuelle Energieträger-IDs und öffentliche Originalquelle.",
+      "normativeReview": {
+        "status": "verified",
+        "scope": "leaf-only",
+        "edition": "Öffentlich abgerufene konsolidierte Fassung, Stand 23.07.2026 / Abruf 30.10.2026",
+        "evidence": [
+          {
+            "source": "geg9",
+            "section": "Anlage 9 Nr. 1a und Nr. 3; geprüfter Teilkatalog"
+          },
+          {
+            "source": "geg9",
+            "section": "Tabellenzeilen im explizit geprüften Teilkatalog"
+          }
+        ],
+        "reviewer": "Codex – direkter Text-/Tabellenabgleich, nur angegebener Einzelbaustein"
+      },
+      "technicalValidation": {
+        "kind": "public-source-and-unit-tests",
+        "caseCount": 4
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "N01",
+      "priority": "P1",
+      "document": "DIN V 18599-1:2018-09",
+      "needed": "System-/Bilanzgrenzen, Flächenbezüge, Zonierung, Hüllflächenzuweisung und Anhang D; Abgleich mit der vom Excelverfahren verwendeten älteren Fassung.",
+      "rules": [
+        "heated-area",
+        "direct-envelope",
+        "zone-allocation",
+        "apply-factor"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N02",
+      "priority": "P1",
+      "document": "DIN V 18599-2:2018-09",
+      "needed": "Vollständige Regelkontexte für Transmission, Erdreich, Infiltration/Lüftung, Zeitkonstanten, Bilanztemperaturen, Ausnutzungsgrade und Heiz-/Kühlbilanz; Definitionen, Bedingungen und Tabellen einschließen. Excel-Gleichungsnummern sind noch keiner Ausgabe sicher zugeordnet.",
+      "rules": [
+        "transmission",
+        "air-transfer",
+        "heat-capacity",
+        "thermal-response",
+        "heating-utilization",
+        "heating-part",
+        "monthly-balance"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N03",
+      "priority": "P1",
+      "document": "DIN V 18599-10:2018-09",
+      "needed": "Nutzungsprofile einschließlich Teilbetriebszeiten/Sollwerte sowie Klima-/Strahlungsdaten und Zuordnung der Profilvarianten.",
+      "rules": [
+        "profiles-climate",
+        "air-transfer",
+        "monthly-balance"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N04",
+      "priority": "P1",
+      "document": "DIN 4108-4:2017-03; DIN EN ISO 6946:2008-04; einschlägiges Fensterverfahren",
+      "needed": "Vom öffentlich abgerufenen § 20 Abs. 6 ausdrücklich genannte U-Wert-Verfahren und Randbedingungen. Für den Fenster-Randverbund zusätzlich anzuwendende Ausgabe/Abschnitt von DIN EN ISO 10077-1 prüfen. Keine Normgleichheit aus dem pauschalen Excel-Faktor 3 m⁻¹ ableiten.",
+      "rules": [
+        "window-u",
+        "transmission"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N05",
+      "priority": "P2",
+      "document": "DIN V 18599-4:2018-09",
+      "needed": "Tageslichtbereiche, Transparenz-/Verbauungsindizes, Kontrollsysteme und Monats-/Jahresverfahren der Beleuchtung.",
+      "rules": [
+        "lighting-daylight"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N06",
+      "priority": "P2",
+      "document": "DIN V 18599-3, -6 und -7:2018-09",
+      "needed": "Je Gebäudetyp einschlägige Luftaufbereitung, WRG, Ventilatoren, Kälteerzeugung, Betriebszeiten und Anlagenkopplungen.",
+      "rules": [
+        "ventilation-system",
+        "cooling-system"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N07",
+      "priority": "P2",
+      "document": "DIN V 18599-5 und -8:2018-09",
+      "needed": "Wärmeerzeugung, Übergabe/Verteilung/Speicherung, TWW und Solarthermie samt Tabellen, Hilfsenergie und Kopplungen.",
+      "rules": [
+        "heat-dhw-system"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N08",
+      "priority": "P2",
+      "document": "DIN V 18599-9:2018-09 und einschlägige gesetzliche Anrechnungsregeln",
+      "needed": "PV, KWK, Erzeugungsanrechnung, Export-/Verdrängungsstrom und Speicher. Wind-/Speichermodell des Exceltools auf normative Grundlage oder Autorenvereinfachung prüfen.",
+      "rules": [
+        "renewable-balance"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N09",
+      "priority": "P2",
+      "document": "DIN V 18599-11:2018-09",
+      "needed": "Gebäudeautomation und betriebliche Korrekturen; Zuordnung zu den Blattparametern.",
+      "rules": [
+        "monthly-balance",
+        "ventilation-system"
+      ],
+      "status": "source-required"
+    },
+    {
+      "id": "N10",
+      "priority": "P3",
+      "document": "Autoren-/Verfahrensdokumentation EnerCalC 6.1.177 und ältere verwendete DIN-Fassungen",
+      "needed": "Nur für die historische Vergleichsanalyse, keine Sollvorgabe und keine Voraussetzung zur Übernahme aktueller Verfahren. Hüllflächenvereinfachung, Faktor 3 m⁻¹ beim Fenster, gerundeter Glasanteil, Wärmebrücken-Flächenbezug, 1-%-Begrenzung des Ausnutzungsgrads, Wind/Speicher/KWK sowie Begründung gemischter Normstände.",
+      "rules": [
+        "window-u",
+        "transmission",
+        "heating-utilization",
+        "zone-allocation",
+        "renewable-balance"
+      ],
+      "status": "reference-only"
+    },
+    {
+      "id": "N11",
+      "priority": "P3",
+      "document": "Kontrollierter Excel-Neuberechnungsexport",
+      "needed": "Nur für die historische Vergleichsanalyse, keine Sollvorgabe und keine Voraussetzung zur Übernahme aktueller Verfahren. Exakte Eingabestände, aktive Regelwerk-/Profilindizes, erforderliche VBA-Schritte sowie Monats-/Zonen-/Jahres-Zwischenwerte. Der vorhandene Cache allein ist keine dynamische Excel-Referenz.",
+      "rules": [
+        "monthly-balance",
+        "zone-allocation",
+        "renewable-balance"
+      ],
+      "status": "reference-only"
+    },
+    {
+      "id": "N12",
+      "priority": "P1",
+      "document": "AMEV – aktuell einschlägige Ausgaben und Einführung",
+      "needed": "Ausgaben und projektspezifische Verbindlichkeit für Heizung, RLT, Kälte, Beleuchtung, Gebäudeautomation und Energie-/Betriebsführung dokumentieren; konkrete Rechenregeln, Planungswerte und Abweichungen einzeln zuordnen.",
+      "status": "applicability-open",
+      "rules": [
+        "monthly-balance",
+        "ventilation-system",
+        "cooling-system",
+        "heat-dhw-system",
+        "lighting-daylight"
+      ]
+    },
+    {
+      "id": "N13",
+      "priority": "P1",
+      "document": "Bundesbau – RBBau, aktuelle Energie-/Nachhaltigkeitsvorgaben und Einführungserlasse",
+      "needed": "Öffentlich verfügbare Fassungen mit Stichtag prüfen; Anwendbarkeit für Neubau, Erweiterung, Sanierung und jeweilige Gebäudenutzung sowie verbindliche energetische Zielwerte/Methoden bestätigen.",
+      "status": "applicability-open",
+      "rules": [
+        "profiles-climate",
+        "monthly-balance",
+        "renewable-balance"
+      ]
+    },
+    {
+      "id": "N14",
+      "priority": "P1",
+      "document": "Bundeswehr – aktuelle baufachliche/projektspezifische Vorgaben",
+      "needed": "Für den vorgesehenen Anwendungsfall freigegebene fachliche Vorgaben einschließlich Ausgabe, Geltungsbereich, Betriebs-/Nutzungsprofilen, Abweichungen und Vorrangregeln bereitstellen. Nicht aus allgemeinen Bundesbau-Seiten oder dem Excel-Beispiel ableiten.",
+      "status": "source-required",
+      "rules": [
+        "profiles-climate",
+        "zone-allocation",
+        "monthly-balance",
+        "ventilation-system",
+        "heat-dhw-system"
+      ]
+    }
+  ],
+  "publicSources": [
+    {
+      "id": "geg20",
+      "url": "https://www.gesetze-im-internet.de/geg/__20.html",
+      "retrievedAt": "2026-10-30T08:55:25.933632+00:00",
+      "kind": "public-legislation",
+      "title": "§ 20 GModG - Einzelnorm",
+      "htmlSha256": "3c380b69f990000023733f20d80df0a78c94002ca506ff1e2290e283c72ed4f9",
+      "snapshot": "public/geg20.txt",
+      "table": []
+    },
+    {
+      "id": "geg21",
+      "url": "https://www.gesetze-im-internet.de/geg/__21.html",
+      "retrievedAt": "2026-10-30T08:55:25.934737+00:00",
+      "kind": "public-legislation",
+      "title": "§ 21 GModG - Einzelnorm",
+      "htmlSha256": "1aed1740483709cd746720a7b2aa65f8d660e3980924fef0ba266e895e663426",
+      "snapshot": "public/geg21.txt",
+      "table": []
+    },
+    {
+      "id": "geg22",
+      "url": "https://www.gesetze-im-internet.de/geg/__22.html",
+      "retrievedAt": "2026-10-30T08:55:25.936350+00:00",
+      "kind": "public-legislation",
+      "title": "§ 22 GModG - Einzelnorm",
+      "htmlSha256": "5cefa56d6062fc0e3347e9b54f8c777e0fda4ea2afa8228ba91b5bed962f9234",
+      "snapshot": "public/geg22.txt",
+      "table": []
+    },
+    {
+      "id": "geg4",
+      "url": "https://www.gesetze-im-internet.de/geg/anlage_4.html",
+      "retrievedAt": "2026-10-30T08:55:25.937934+00:00",
+      "kind": "public-legislation",
+      "title": "Anlage 4 GModG - Einzelnorm",
+      "htmlSha256": "74d22ec464529a2420228cd102ca0622230b72201e092f9b01ff32896228bbc1",
+      "snapshot": "public/geg4.txt",
+      "table": [
+        {
+          "number": 1,
+          "carrier": "Heizöl",
+          "value": 1.1
+        },
+        {
+          "number": 2,
+          "carrier": "Erdgas",
+          "value": 1.1
+        },
+        {
+          "number": 3,
+          "carrier": "Flüssiggas",
+          "value": 1.1
+        },
+        {
+          "number": 4,
+          "carrier": "Steinkohle",
+          "value": 1.1
+        },
+        {
+          "number": 5,
+          "carrier": "Braunkohle",
+          "value": 1.2
+        },
+        {
+          "number": 6,
+          "carrier": "Biogas",
+          "value": 1.1
+        },
+        {
+          "number": 7,
+          "carrier": "Bioöl",
+          "value": 1.1
+        },
+        {
+          "number": 8,
+          "carrier": "Holz",
+          "value": 0.2
+        },
+        {
+          "number": 9,
+          "carrier": "netzbezogen",
+          "value": 1.8
+        },
+        {
+          "number": 10,
+          "carrier": "gebäudenah erzeugt (aus Photovoltaik oder Windkraft)",
+          "value": 0.0
+        },
+        {
+          "number": 11,
+          "carrier": "Verdrängungsstrommix für KWK",
+          "value": 2.8
+        },
+        {
+          "number": 12,
+          "carrier": "Erdwärme, Geothermie, Solarthermie, Umgebungswärme",
+          "value": 0.0
+        },
+        {
+          "number": 13,
+          "carrier": "Erdkälte, Umgebungskälte",
+          "value": 0.0
+        },
+        {
+          "number": 14,
+          "carrier": "Abwärme",
+          "value": 0.0
+        },
+        {
+          "number": 16,
+          "carrier": "Siedlungsabfälle",
+          "value": 0.0
+        }
+      ]
+    },
+    {
+      "id": "geg9",
+      "url": "https://www.gesetze-im-internet.de/geg/anlage_9.html",
+      "retrievedAt": "2026-10-30T08:55:25.940717+00:00",
+      "kind": "public-legislation",
+      "title": "Anlage 9 GModG - Einzelnorm",
+      "htmlSha256": "eb4b0243f3ddf2e6f5a197214a0df857fa860f49a2e8f077641c37b5cdb5ddb3",
+      "snapshot": "public/geg9.txt",
+      "table": [
+        {
+          "number": 1,
+          "carrier": "Heizöl",
+          "value": 310.0
+        },
+        {
+          "number": 2,
+          "carrier": "Erdgas",
+          "value": 240.0
+        },
+        {
+          "number": 3,
+          "carrier": "Flüssiggas",
+          "value": 270.0
+        },
+        {
+          "number": 4,
+          "carrier": "Steinkohle",
+          "value": 400.0
+        },
+        {
+          "number": 5,
+          "carrier": "Braunkohle",
+          "value": 430.0
+        },
+        {
+          "number": 6,
+          "carrier": "Biogas",
+          "value": 140.0
+        },
+        {
+          "number": 7,
+          "carrier": "Biogas, gebäudenah erzeugt",
+          "value": 75.0
+        },
+        {
+          "number": 8,
+          "carrier": "Biogenes Flüssiggas",
+          "value": 180.0
+        },
+        {
+          "number": 9,
+          "carrier": "Bioöl",
+          "value": 210.0
+        },
+        {
+          "number": 10,
+          "carrier": "Bioöl, gebäudenah erzeugt",
+          "value": 105.0
+        },
+        {
+          "number": 11,
+          "carrier": "Holz",
+          "value": 20.0
+        },
+        {
+          "number": 12,
+          "carrier": "netzbezogen",
+          "value": 560.0
+        },
+        {
+          "number": 13,
+          "carrier": "gebäudenah erzeugt (aus Photovoltaik oder Windkraft)",
+          "value": 0.0
+        },
+        {
+          "number": 14,
+          "carrier": "Verdrängungsstrommix",
+          "value": 860.0
+        },
+        {
+          "number": 15,
+          "carrier": "Erdwärme, Geothermie, Solarthermie, Umgebungswärme",
+          "value": 0.0
+        },
+        {
+          "number": 16,
+          "carrier": "Erdkälte, Umgebungskälte",
+          "value": 0.0
+        },
+        {
+          "number": 17,
+          "carrier": "Abwärme aus Prozessen",
+          "value": 40.0
+        },
+        {
+          "number": 19,
+          "carrier": "Wärme aus Verbrennung von Siedlungsabfällen (unter pauschaler Berücksichtigung von Hilfsenergie und Stützfeuerung)",
+          "value": 20.0
+        },
+        {
+          "number": 20,
+          "carrier": "Brennstoff: Stein-/Braunkohle",
+          "value": 300.0
+        },
+        {
+          "number": 21,
+          "carrier": "Gasförmige und flüssige Brennstoffe",
+          "value": 180.0
+        },
+        {
+          "number": 22,
+          "carrier": "Erneuerbarer Brennstoff",
+          "value": 40.0
+        },
+        {
+          "number": 23,
+          "carrier": "Brennstoff: Stein-/Braunkohle",
+          "value": 400.0
+        },
+        {
+          "number": 24,
+          "carrier": "Gasförmige und flüssige Brennstoffe",
+          "value": 300.0
+        },
+        {
+          "number": 25,
+          "carrier": "Erneuerbarer Brennstoff",
+          "value": 60.0
+        }
+      ]
+    },
+    {
+      "id": "gegFull",
+      "url": "https://www.gesetze-im-internet.de/geg/BJNR172810020.html",
+      "retrievedAt": "2026-10-30T08:55:25.984845+00:00",
+      "kind": "public-legislation",
+      "title": "GModG - Gesetz zur Einsparung von Energie und zur Modernisierung der W�rmeversorgung in Geb�uden*",
+      "htmlSha256": "3062ef71110c8d3248063caff01d9f825108169b4ccead884d6fffcd82a20748",
+      "snapshot": "public/gegFull.txt",
+      "table": [],
+      "observedLawName": "Gebäudemodernisierungsgesetz (GModG)",
+      "observedAmendment": "Art. 4 G v. 23.7.2026 I Nr. 226 (Angabe des abgerufenen Texts)"
+    }
+  ],
+  "factorComparisons": [
+    {
+      "label": "Primärenergie netzbezogener Strom",
+      "workbook": 1.8,
+      "public": 1.8,
+      "unit": "kWh_prim/kWh_end",
+      "source": "geg4",
+      "item": "Tabelle Nr. 9",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "I10"
+      },
+      "finding": "Einzelner Tabellenwert stimmt überein; keine Freigabe des gesamten Bilanzverfahrens."
+    },
+    {
+      "label": "Treibhausgase netzbezogener Strom",
+      "workbook": 617,
+      "public": 560.0,
+      "unit": "g CO₂-Äq./kWh_end",
+      "source": "geg9",
+      "item": "Nr. 3, Tabelle Nr. 12",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "J10"
+      },
+      "finding": "Abweichung: historischer Dateifaktor darf nicht in das aktuelle Rechtsprofil kopiert werden."
+    },
+    {
+      "label": "Treibhausgase Erdgas",
+      "workbook": 277,
+      "public": 240.0,
+      "unit": "g CO₂-Äq./kWh_end",
+      "source": "geg9",
+      "item": "Nr. 3, Tabelle Nr. 2",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "J7"
+      },
+      "finding": "Excel gruppiert Heizöl/Erdgas; diese gesetzliche Tabellenzeile gilt nur für Erdgas."
+    },
+    {
+      "label": "Treibhausgase Heizöl",
+      "workbook": 277,
+      "public": 310.0,
+      "unit": "g CO₂-Äq./kWh_end",
+      "source": "geg9",
+      "item": "Nr. 3, Tabelle Nr. 1",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "J7"
+      },
+      "finding": "Gleicher Excel-Sammelfaktor, anderer gesetzlicher Energieträger; getrennte IDs erforderlich."
+    },
+    {
+      "label": "Treibhausgase Holz",
+      "workbook": 14.333333333333334,
+      "public": 20.0,
+      "unit": "g CO₂-Äq./kWh_end",
+      "source": "geg9",
+      "item": "Nr. 3, Tabelle Nr. 11",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "J8"
+      },
+      "finding": "Historische Gruppierung Holz/Pellets und Rechtsprofil getrennt führen."
+    },
+    {
+      "label": "Treibhausgase Verdrängungsstrom",
+      "workbook": 617,
+      "public": 860.0,
+      "unit": "g CO₂-Äq./kWh_end",
+      "source": "geg9",
+      "item": "Nr. 3, Tabelle Nr. 14",
+      "workbookCell": {
+        "sheet": "Faktoren",
+        "cell": "J12"
+      },
+      "finding": "Anrechnungsverfahren und Zulässigkeit des Verdrängungsfaktors zusätzlich prüfen."
+    }
+  ],
+  "overall": {
+    "normativeReady": false,
+    "note": "Nur aktuell anwendbare Verfahren als Ziel. Öffentlich belegte Umrechnungsbausteine sind eng begrenzt geprüft; die Gebäude-Gesamtberechnung und projektspezifische AMEV-/Bundesbau-/Bundeswehr-Anwendung bleiben offen."
+  },
+  "currentFactors": [
+    {
+      "id": "grid-electricity",
+      "label": "Netzbezogener Strom",
+      "primary": 1.8,
+      "co2": 560.0,
+      "primarySource": {
+        "id": "geg4",
+        "tableNumber": 9
+      },
+      "co2Source": {
+        "id": "geg9",
+        "tableNumber": 12
+      }
+    },
+    {
+      "id": "natural-gas",
+      "label": "Erdgas",
+      "primary": 1.1,
+      "co2": 240.0,
+      "primarySource": {
+        "id": "geg4",
+        "tableNumber": 2
+      },
+      "co2Source": {
+        "id": "geg9",
+        "tableNumber": 2
+      }
+    },
+    {
+      "id": "heating-oil",
+      "label": "Heizöl",
+      "primary": 1.1,
+      "co2": 310.0,
+      "primarySource": {
+        "id": "geg4",
+        "tableNumber": 1
+      },
+      "co2Source": {
+        "id": "geg9",
+        "tableNumber": 1
+      }
+    },
+    {
+      "id": "wood",
+      "label": "Holz",
+      "primary": 0.2,
+      "co2": 20.0,
+      "primarySource": {
+        "id": "geg4",
+        "tableNumber": 8
+      },
+      "co2Source": {
+        "id": "geg9",
+        "tableNumber": 11
+      }
+    }
+  ],
+  "clientSources": [
+    {
+      "id": "amev-heat",
+      "title": "AMEV Wärmeversorgungsanlagen – Teil 1",
+      "edition": "2021",
+      "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/Waermeversorgungsanlagen/WVA-Teil1_2021.pdf",
+      "pdfSha256": "1474220af89db6f35e5bcf9d298501f361feaa60e5c52d62b49cee13ba548b03",
+      "pdfPages": 121,
+      "locators": [
+        {
+          "term": "Anwendungsbereich",
+          "pdfPages": [
+            3,
+            8,
+            36,
+            50,
+            81,
+            82,
+            96
+          ],
+          "totalMatchesInPages": 7
+        },
+        {
+          "term": "Heizlast",
+          "pdfPages": [
+            27,
+            33,
+            38,
+            39,
+            40,
+            43,
+            45,
+            52,
+            62,
+            93,
+            95,
+            97,
+            100,
+            112
+          ],
+          "totalMatchesInPages": 14
+        },
+        {
+          "term": "18599",
+          "pdfPages": [
+            62
+          ],
+          "totalMatchesInPages": 1
+        }
+      ],
+      "relevance": "Planung/Auslegung von Wärmeversorgung; Jahresbedarf und Auslegungs-Heizlast getrennt prüfen.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "amev-rlt",
+      "title": "AMEV RLT-Anlagen",
+      "edition": "Stand 01.07.2023",
+      "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/RLT-Anlagen/RLT-Anlagen_Stand_01.07.2023.pdf",
+      "pdfSha256": "f1342a82d01c80cf181dac342efea47cb02405aeb6c6a7a58391834e53e5cf5e",
+      "pdfPages": 132,
+      "locators": [
+        {
+          "term": "Anwendungsbereich",
+          "pdfPages": [
+            4,
+            6,
+            11,
+            29,
+            39,
+            45,
+            66,
+            97
+          ],
+          "totalMatchesInPages": 8
+        },
+        {
+          "term": "18599",
+          "pdfPages": [
+            129
+          ],
+          "totalMatchesInPages": 1
+        },
+        {
+          "term": "SFP",
+          "pdfPages": [
+            31,
+            32
+          ],
+          "totalMatchesInPages": 2
+        }
+      ],
+      "relevance": "Außenluft, Betrieb, Ventilatorleistung, WRG und Auslegungsdaten; konkrete Nutzungsfälle und Einführung fehlen.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "amev-cooling",
+      "title": "AMEV Kälte",
+      "edition": "2026 (ersetzt Kälte 2017 laut Fachseite)",
+      "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/Kaelte_2026/Kaelte_2026.pdf",
+      "pdfSha256": "26f09bb23965e68bba8d4e6094588af3bb9103ab5bd40bb5a22304c20ee8628d",
+      "pdfPages": 68,
+      "locators": [
+        {
+          "term": "Kühllast",
+          "pdfPages": [
+            30,
+            32,
+            38,
+            56,
+            66
+          ],
+          "totalMatchesInPages": 5
+        },
+        {
+          "term": "18599",
+          "pdfPages": [],
+          "totalMatchesInPages": 0
+        },
+        {
+          "term": "Leistungszahl",
+          "pdfPages": [
+            6,
+            15,
+            19,
+            22,
+            32,
+            33,
+            39,
+            53,
+            62,
+            63
+          ],
+          "totalMatchesInPages": 10
+        }
+      ],
+      "relevance": "Kühllastreduktion, Systemwahl, Erzeugung und Betrieb; keine pauschale Gleichsetzung mit der energetischen Monatsbilanz.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "amev-light",
+      "title": "AMEV Beleuchtung",
+      "edition": "Ausgabe 2023, Stand 03/2025",
+      "url": "https://www.amev-online.de/AMEVInhalt/Planen/Elektrotechnik/Beleuchtung/Beleuchtung_2023_Stand_03-25.pdf",
+      "pdfSha256": "faf184267f7862de38d205f3352b54f97d0bf35ca767be09f565accaeeeefe0c",
+      "pdfPages": 102,
+      "locators": [
+        {
+          "term": "18599",
+          "pdfPages": [
+            68,
+            82
+          ],
+          "totalMatchesInPages": 2
+        },
+        {
+          "term": "Wirkungsgradverfahren",
+          "pdfPages": [
+            8,
+            42,
+            94
+          ],
+          "totalMatchesInPages": 3
+        },
+        {
+          "term": "Energiebedarf",
+          "pdfPages": [
+            58,
+            62,
+            68,
+            82
+          ],
+          "totalMatchesInPages": 4
+        }
+      ],
+      "relevance": "LED, Beleuchtungsplanung und energetische Betriebsführung; Projektanforderungen und DIN-Rechenverfahren getrennt führen.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "amev-automation",
+      "title": "AMEV Gebäudeautomation",
+      "edition": "2023",
+      "url": "https://www.amev-online.de/AMEVInhalt/Planen/Gebaeudeautomation/GA/2023-09-11_AMEV_GA2023.pdf",
+      "pdfSha256": "97186c103e73bc5e5b75106c84c470ccaca0458e930f53228277b844c5d390ea",
+      "pdfPages": 165,
+      "locators": [
+        {
+          "term": "18599",
+          "pdfPages": [
+            55,
+            61,
+            72,
+            94,
+            105,
+            106,
+            107,
+            158,
+            163
+          ],
+          "totalMatchesInPages": 9
+        },
+        {
+          "term": "Anwendungsbereich",
+          "pdfPages": [],
+          "totalMatchesInPages": 0
+        },
+        {
+          "term": "Energieeffizienz",
+          "pdfPages": [
+            8,
+            16,
+            17,
+            59,
+            60,
+            64,
+            72,
+            93,
+            95,
+            105,
+            114,
+            156,
+            157,
+            158,
+            162
+          ],
+          "totalMatchesInPages": 15
+        }
+      ],
+      "relevance": "Automation und Betriebsanforderungen einschließlich Einfluss auf energetische Randbedingungen; projektbezogene Festlegungen nötig.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "rbbau-pdf",
+      "title": "RBBau",
+      "edition": "Stand 15.07.2026",
+      "url": "https://www.fib-bund.de/Inhalt/Richtlinien/RBBau/RBBau_Onlinefassung_Stand_15.07.2026.pdf",
+      "pdfSha256": "049480c27c9dcfb24245ab60dc608418560d71697da99f1466f233959467876b",
+      "pdfPages": 33,
+      "locators": [
+        {
+          "term": "Geltungsbereich",
+          "pdfPages": [
+            2,
+            6,
+            11
+          ],
+          "totalMatchesInPages": 3
+        },
+        {
+          "term": "Standardsetzungen",
+          "pdfPages": [
+            8
+          ],
+          "totalMatchesInPages": 1
+        },
+        {
+          "term": "militärischer Bau",
+          "pdfPages": [
+            31
+          ],
+          "totalMatchesInPages": 1
+        }
+      ],
+      "relevance": "Bundesbau-Verfahren und Zuständigkeiten; zusätzliche bzw. abweichende Regelungen im militärischen Bau können erforderlich sein.",
+      "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "fib-energy",
+      "title": "FIB: Ausstellen von Energieausweisen",
+      "edition": "Öffentliche Fachseite, Abruf 30.10.2026",
+      "url": "https://www.fib-bund.de/Inhalt/Leitfaden/Energieausweise/",
+      "htmlSha256": "af95f8474a5912c142459de9f7df5f0d832ea6b71282fc673f75733588e3e161",
+      "relevance": "Nennt GModG seit 29.07.2026, Änderungen des Berechnungsregelwerks zum 01.01.2027 sowie nur teilweise weiter anwendbaren Leitfaden GEG 2023. Einführungserlasse werden im Bereich FIB intern verortet.",
+      "status": "Aussage der offiziellen Fachseite geprüft; zukünftiges 2027-Verfahren noch nicht freigegeben.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "fib-sustainable",
+      "title": "FIB: Leitfaden Nachhaltiges Bauen / BNB",
+      "edition": "Öffentliche Fachseite, Abruf 30.10.2026",
+      "url": "https://www.fib-bund.de/Inhalt/Leitfaden/NachhaltigesBauen/",
+      "htmlSha256": "09f0a196425287054e7e224b3bfc133a57a452002b067acf68a8f4af215bf79d",
+      "relevance": "Nachhaltigkeitsbewertung, Lebenszyklus und Zielvereinbarung sind von der Gebäude-Betriebsenergiebilanz zu trennen. Je Nutzung/Bauaufgabe einschlägige BNB-Version und Einführung bestimmen.",
+      "status": "Öffentliche Einordnung geprüft; konkrete BNB-Systemvariante und Einführung offen.",
+      "checkedDate": "2026-10-30"
+    },
+    {
+      "id": "fib-internal",
+      "title": "FIB intern – Einführungserlasse und Grundsatzdokumente",
+      "edition": "Zugriff / projektspezifische Freigabe fehlt",
+      "url": "https://www.fachinfoboerse.de/",
+      "relevance": "Die öffentliche FIB verweist für Einführungserlasse und weitere Grundsatzdokumente auf diesen zugangsbeschränkten Bereich. Keine Anmeldung, keine Umgehung und keine Beschaffung interner Bundeswehr-Dokumente vorgenommen.",
+      "status": "In dieser Sitzung nicht zugänglich; relevante fachlich freigegebene Vorgaben vom Auftraggeber benötigt.",
+      "checkedDate": "2026-10-30"
+    }
+  ],
+  "requiredCurrentRules": [
+    "zone-allocation",
+    "profiles-climate",
+    "monthly-balance",
+    "lighting-daylight",
+    "ventilation-system",
+    "cooling-system",
+    "heat-dhw-system",
+    "renewable-balance",
+    "current-primary",
+    "current-emissions"
+  ],
+  "requirementsHierarchy": [
+    "Gesetz und Übergang",
+    "In Bezug genommene Normausgabe",
+    "Einführung/Auftraggeber und Projektfestlegungen",
+    "AMEV/weitere Planungsempfehlungen mit geklärter Verbindlichkeit"
+  ]
+}

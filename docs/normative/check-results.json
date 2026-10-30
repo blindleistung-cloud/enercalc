@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "0.1.0",
+  "workbookSha256": "d84dd1400ebbf5d604187ed44753fc439d6bcc08e1d19f98396421099c10306e",
+  "tolerance": {
+    "absolute": 1e-9,
+    "relative": 1e-10
+  },
+  "total": 503,
+  "passed": 503,
+  "failed": 0,
+  "scope": "Vergleich gespeicherter Zwischenwerte; keine Excel-Neuberechnung. Nichtnumerische Cachewerte, nicht unterstützte Definitionsbereiche und leere Zonen werden nicht als bestandene Fälle gewertet.",
+  "normativeReady": false,
+  "results": {
+    "heated-area": {
+      "passed": 1,
+      "failed": 0,
+      "cases": 1,
+      "referenceKinds": {
+        "saved-excel-cache": 1
+      }
+    },
+    "direct-envelope": {
+      "passed": 1,
+      "failed": 0,
+      "cases": 1,
+      "referenceKinds": {
+        "saved-excel-cache": 1
+      }
+    },
+    "window-u": {
+      "passed": 1,
+      "failed": 0,
+      "cases": 1,
+      "referenceKinds": {
+        "saved-excel-cache": 1
+      }
+    },
+    "apply-factor": {
+      "passed": 1,
+      "failed": 0,
+      "cases": 1,
+      "referenceKinds": {
+        "saved-excel-cache": 1
+      }
+    },
+    "emissions": {
+      "passed": 1,
+      "failed": 0,
+      "cases": 1,
+      "referenceKinds": {
+        "independent-arithmetic": 1
+      }
+    },
+    "transmission": {
+      "passed": 22,
+      "failed": 0,
+      "cases": 22,
+      "referenceKinds": {
+        "saved-excel-cache": 22
+      }
+    },
+    "heat-capacity": {
+      "passed": 22,
+      "failed": 0,
+      "cases": 22,
+      "referenceKinds": {
+        "saved-excel-cache": 22
+      }
+    },
+    "air-transfer": {
+      "passed": 22,
+      "failed": 0,
+      "cases": 22,
+      "referenceKinds": {
+        "saved-excel-cache": 22
+      }
+    },
+    "thermal-response": {
+      "passed": 144,
+      "failed": 0,
+      "cases": 144,
+      "referenceKinds": {
+        "saved-excel-cache": 144
+      }
+    },
+    "heating-utilization": {
+      "passed": 144,
+      "failed": 0,
+      "cases": 144,
+      "referenceKinds": {
+        "saved-excel-cache": 144
+      }
+    },
+    "heating-part": {
+      "passed": 144,
+      "failed": 0,
+      "cases": 144,
+      "referenceKinds": {
+        "saved-excel-cache": 144
+      }
+    }
+  }
+}

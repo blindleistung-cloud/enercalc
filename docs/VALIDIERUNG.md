@@ -67,3 +67,15 @@ Die verwaltete System-Chromium-Richtlinie dieser Cloud blockiert `file://` mit `
 - aktuelle Norm-/Verordnungskonformität und fachliche Zertifizierung.
 
 Diese Grenzen sind im Analysewerkzeug und Migrationskonzept kenntlich gemacht. Die vorhandenen 1.668 Excel-Fehlercachewerte wurden inventarisiert und nicht als Fehler der Analyseansicht unterdrückt.
+
+## Aktualisierung: Migration auf aktuelle Verfahren
+
+Der Ausgangsbestand wurde unverändert erhalten. Neu sind `core/engine.js`, das aktuelle Quellen-/Nachweisregister und die Ansichten **Rechenbausteine** / **Normnachweise**. Der operative Pfad verwendet keine historischen Excel-Rechenprofile.
+
+- `node tests/core.test.cjs`: **10 Testgruppen bestanden**, einschließlich 503 gespeicherter Zwischenwert-/Arithmetikvergleiche für den gesonderten Referenzaudit, unabhängiger Grenz-/Einheitentests und vier aktueller Energieträger je Umrechnung.
+- `node tools/verify_core.cjs`: **503 von 503** Referenzvergleichen bestanden; dies ist kein Normkonformitätsnachweis.
+- Die acht ursprünglichen Python-Integritätstests wurden mit gesetzter Originalquelle erneut ausgeführt: **8 bestanden, 0 übersprungen**.
+- Der erweiterte Browser-Smoke-Test besteht: aktuelle Umrechnungen, getrennte Faktoren für Erdgas/Heizöl, Quellenprotokoll und Nachweismatrix, Fehler bei leeren Eingaben sowie Sperre unbestätigter Stichtage einschließlich 2027.
+- Desktop- und mobile Ansichten sowie alle Bedienprüfungen nach dem Dokumentladen bei deaktiviertem Browsernetz funktionieren; keine externen Anfragen oder JavaScript-Ausnahmen. Die bekannte verwaltete file://-Richtliniengrenze besteht weiter.
+
+Nur die eng begrenzten gesetzlichen Umrechnungen von vorgegebenem Endenergiebedarf sind direkt mit öffentlichem Text/Tabellen belegt. Eine fachliche Gebäude-Gesamtfreigabe oder Bundeswehr-Konformität ist nicht nachgewiesen. Die konkret fehlenden Normtexte, Einführungen und Anwendungsentscheidungen stehen in [NORMEN.md](NORMEN.md).

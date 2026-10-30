@@ -1,0 +1,126 @@
+Anlage 9 GModG - Einzelnorm
+zurück
+weiter
+Nichtamtliches Inhaltsverzeichnis
+Gesetz zur Einsparung von Energie und zur Modernisierung der W�rmeversorgung in Geb�uden* (Geb�udemodernisierungsgesetz - GModG)
+Anlage 9
+(zu § 85 Absatz 6)
+Umrechnung in Treibhausgasemissionen
+(Fundstelle: BGBl. I 2020, 1788 - 1789; bezüglich der einzelnen Änderungen vgl. Fußnote)
+1.
+Angabe in Energiebedarfsausweisen
+Die mit dem Gebäudebetrieb verbundene emittierte Menge von Treibhausgasen berechnet sich für die Angabe in Energiebedarfsausweisen wie folgt:
+a)
+Die Treibhausgasemissionen berechnen sich bei fossilen Brennstoffen, bei Biomasse, bei Strom und bei Abwärme aus dem Produkt des nach § 20 oder nach § 21 ermittelten endenergetischen Bedarfswerts des Gebäudes bezüglich des betreffenden Energieträgers und dem auf die eingesetzte Energiemenge bezogenen Emissionsfaktor nach Nummer 3. Der Emissionsfaktor für „gebäudenahe Erzeugung“ bei gasförmiger und flüssiger Biomasse darf dabei nur verwendet werden, wenn die Voraussetzungen des § 22 Absatz 1 Nummer 1 oder Nummer 2 erfüllt sind.
+b)
+Wird Wärme aus einer gebäudeintegrierten oder gebäudenahen Kraft-Wärme-Kopplungsanlage bezogen, ist der Emissionsfaktor nach DIN V 18599-9: 2018-09 unter sinngemäßer Anwendung der einschlägigen Regelungen in DIN V 18599-1: 2018-09 Anhang A Abschnitt A.4 zu bestimmen und jeweils mit dem nach § 20 oder nach § 21 ermittelten, durch die Kraft-Wärme-Kopplungsanlage gedeckten endenergetischen Bedarfswert des Gebäudes zu multiplizieren.
+c)
+Wird Fernwärme oder -kälte zur Deckung des Endenergiebedarfs (Wärme, Kälte) eingesetzt, die ganz oder teilweise aus Kraft-Wärme-Kopplungsanlagen stammt, und hat der Betreiber des Wärmenetzes einen Emissionsfaktor auf der Grundlage der DIN V 18599-1: 2018-09 Anhang A Abschnitt A.4 und unter Verwendung der Emissionsfaktoren nach Nummer 3 ermittelt und veröffentlicht, ist dieser Emissionsfaktor zu verwenden und mit dem nach § 20 oder nach § 21 ermittelten endenergetischen Bedarfswert des Gebäudes zu multiplizieren.
+d)
+Wird Fernwärme oder -kälte zur Deckung des Endenergiebedarfs (Wärme, Kälte) eingesetzt, die ganz oder teilweise aus Kraft-Wärme-Kopplungsanlagen stammt, und hat der Betreiber des Versorgungsnetzes keinen Emissionsfaktor ermittelt und veröffentlicht, ist der auf die für die Fernwärme oder -kälte eingesetzten Brennstoffe bezogene Emissionsfaktor nach Nummer 3 zu verwenden und mit dem nach § 20 oder nach § 21 ermittelten endenergetischen Bedarfswert des Gebäudes zu multiplizieren.
+e)
+Bei der Ermittlung der Emissionsfaktoren nach Buchstabe c sind die Vorkettenemissionen der einzelnen Energieträger und die Netzverluste zu berücksichtigen. Zur Berücksichtigung der Vorkettenemissionen kann ein pauschaler Aufschlag von 20 Prozent, mindestens aber von 40 Gramm Kohlendioxid-Äquivalent pro Kilowattstunde, auf den ohne Berücksichtigung der Vorkettenemissionen bestimmten Emissionsfaktor angewendet werden.
+f)
+Falls der Wärme-, Kälte- und Strombedarf des Gebäudes aus unterschiedlichen Brennstoffen und Energieträgern gedeckt wird, so ist die Gesamttreibhausgasemission als die Summe der nach § 20 oder nach § 21 ermittelten endenergetischen Bedarfswerte des Gebäudes bezüglich der einzelnen Brennstoffe und Energieträger, jeweils multipliziert mit den betreffenden Emissionsfaktoren, zu ermitteln.
+g)
+(weggefallen)
+h)
+(weggefallen)
+2.
+Angabe in Energieverbrauchsausweisen
+Die mit dem Gebäudebetrieb verbundenen Treibhausgasemissionen berechnen sich als Summe der Energieverbrauchswerte aus dem Energieverbrauchsausweis bezüglich der einzelnen Energieträger, jeweils multipliziert mit den entsprechenden Emissionsfaktoren nach Nummer 3.
+3.
+Emissionsfaktoren
+Nummer
+Kategorie
+Energieträger
+Emissionsfaktor
+[g CO
+2
+-Äquivalent pro kWh]
+1
+Fossile Brennstoffe
+Heizöl
+310
+2
+Erdgas
+240
+3
+Flüssiggas
+270
+4
+Steinkohle
+400
+5
+Braunkohle
+430
+6
+Biogene Brennstoffe
+Biogas
+140
+7
+Biogas, gebäudenah erzeugt
+75
+8
+Biogenes Flüssiggas
+180
+9
+Bioöl
+210
+10
+Bioöl, gebäudenah erzeugt
+105
+11
+Holz
+20
+12
+Strom
+netzbezogen
+560
+13
+gebäudenah erzeugt (aus Photovoltaik oder Windkraft)
+0
+14
+Verdrängungsstrommix
+860
+15
+Wärme, Kälte
+Erdwärme, Geothermie, Solarthermie, Umgebungswärme
+0
+16
+Erdkälte, Umgebungskälte
+0
+17
+Abwärme aus Prozessen
+40
+18
+Wärme aus KWK, gebäudeintegriert oder gebäudenah
+nach DIN V 18599-9: 2018-09
+19
+Wärme aus Verbrennung von Siedlungsabfällen (unter pauschaler Berücksichtigung von Hilfsenergie und Stützfeuerung)
+20
+20
+Nah-/Fernwärme aus KWK mit Deckungsanteil der KWK an der Wärmeerzeugung von mindestens 70 Prozent
+Brennstoff: Stein-/Braunkohle
+300
+21
+Gasförmige und flüssige Brennstoffe
+180
+22
+Erneuerbarer Brennstoff
+40
+23
+Nah-/Fernwärme aus Heizwerken
+Brennstoff: Stein-/Braunkohle
+400
+24
+Gasförmige und flüssige Brennstoffe
+300
+25
+Erneuerbarer Brennstoff
+60
+zum Seitenanfang
+Impressum
+Datenschutz
+Barrierefreiheitserklärung
+Feedback-Formular

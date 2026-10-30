@@ -1,5 +1,7 @@
 # EnerCalC: Migrationskonzept
 
+> **Aktualisierte Zielvorgabe:** Dieses Dokument enthält das ursprüngliche Konzept. Seit der Freigabe zur Migration gilt ausschließlich die aktuell anwendbare Norm-/Rechtsbasis einschließlich AMEV und Bundesbau/Bundeswehr. Historische EnEV-/LU-Verfahren sind kein Anwendungspfad. Maßgeblich für den aktuellen Arbeitsstand ist [Aktuelle Verfahren und Normnachweise](NORMEN.md). Die ursprüngliche Analyse bleibt als Vergleichsquelle erhalten.
+
 Stand: 30. Oktober 2026. Grundlage: die hochgeladene EnerCalC.xlsm, Version 6.1.177. Die [Bestandsaufnahme](ANALYSE.md) beschreibt die beobachtete Datei; dieses Dokument beschreibt die empfohlene zukünftige Implementierung.
 
 ## Ziel und Umfang

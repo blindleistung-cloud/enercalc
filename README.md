@@ -1,6 +1,14 @@
 # EnerCalC · Workbook Atlas
 
-Statische Analyse und Migrationskonzept für die hochgeladene **EnerCalC.xlsm (6.1.177)**. Der gewünschte erste Schritt ist die vollständige Analyse, noch kein nachgebauter Energierechner.
+Statische Analyse und Migrationskonzept für die hochgeladene **EnerCalC.xlsm (6.1.177)**. Die statische Analyse ist abgeschlossen; die Migration auf aktuell anwendbare Verfahren mit AMEV und Bundesbau/Bundeswehr hat begonnen. Eine vollständige Gebäudeenergieberechnung ist noch nicht freigegeben.
+
+## Aktueller Migrationsstand
+
+- [Normative Prüfbasis, Quellenregister und gezielt fehlende Unterlagen](docs/NORMEN.md)
+- In `index.html`: **Rechenbausteine** für erste isolierte gesetzliche Umrechnungen und **Normnachweise** mit Eingabe-/Rechen-/Ausgabeverträgen.
+- Nur aktuell anwendbare Verfahren als Ziel; alte Excelbausteine bleiben ausschließlich Referenzaudit. Kein stiller Rückgriff auf alte Verfahren.
+- Quellenstichtag 30.10.2026. Für andere Stichtage, insbesondere die von der FIB angekündigten Änderungen zum 01.01.2027, ist eine erneute Quellenprüfung erforderlich.
+- Öffentlich belegte Einzelregeln bestätigen keine Gebäude-Gesamtberechnung oder Bundeswehr-Konformität. Normtexte und einschlägige fachliche Einführungen sind noch erforderlich.
 
 ## Herunterladen über GitHub
 
@@ -23,12 +31,13 @@ Die Ansicht bietet:
 - vollständigen extrahierten VBA-Quelltext mit Prozedur-/Modulsuche;
 - belegte Rechenbeispiele und Migrationsfahrplan mit Abnahmekriterien.
 
-Alle Ergebnisse sind gespeicherte Excel-Caches. Weder Formeln noch Makros werden im Analysewerkzeug berechnet oder ausgeführt. 1.668 gespeicherte Fehlerwerte sind im Inventar dokumentiert. Die Seite baut keine Netzwerkverbindung auf; eine CSP unterbindet Netzwerkzugriffe und fremde Ressourcen.
+Alle Ergebnisse sind gespeicherte Excel-Caches. Excel-Formeln und VBA werden nicht ausgeführt. Die neuen aktuellen Umrechnungsbausteine laufen separat im eigenen JavaScript-Kern; ihre Ergebnisse sind von historischen Cachewerten getrennt. 1.668 gespeicherte Fehlerwerte sind im Inventar dokumentiert. Die Seite baut keine Netzwerkverbindung auf; eine CSP unterbindet Netzwerkzugriffe und fremde Ressourcen.
 
 ## Schriftliche Unterlagen
 
 - [Statische Bestandsaufnahme](docs/ANALYSE.md)
-- [Migrationskonzept](docs/MIGRATION.md)
+- [Aktuelle normative Prüfbasis und Quellenbedarf](docs/NORMEN.md)
+- [Ursprüngliches Migrationskonzept mit Aktualisierungshinweis](docs/MIGRATION.md)
 - [Maschinenlesbares Inventar einschließlich VBA-Quellen](docs/workbook-inventory.json)
 - [Vollständiger komprimierter Zellkatalog](docs/cell-catalog.json.gz)
 - [Prüfbericht](docs/VALIDIERUNG.md)
@@ -39,10 +48,14 @@ Die ursprüngliche XLSM wird nicht verändert und nicht in die HTML-Datei eingeb
 
 Das vorhandene Checkout in `/workspace/enercalc` verwenden. Cloud-Tasks sind bereits isoliert; kein zusätzliches Git-Worktree erforderlich.
 
-Die Analyseansicht und ihr Build benötigen keine npm-Abhängigkeiten. Zum erneuten Bündeln reichen Python 3 und die bereits extrahierten Daten:
+Die Anwendung und ihre Builds benötigen keine npm-Abhängigkeiten. Für die Rechenkernprüfungen wird Node.js verwendet. Zum erneuten Bündeln reichen Python 3 und die bereits extrahierten Daten:
 
 ```sh
 cd /workspace/enercalc
+python3 tools/build_migration_data.py
+node tests/core.test.cjs
+node tools/verify_core.cjs
+python3 tools/build_norms_report.py
 python3 tools/build_report.py
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
@@ -63,3 +76,11 @@ python tests/browser_smoke.py
 Der verwaltete System-Chromium dieser Cloud blockiert direkte `file://`-Navigation per Richtlinie. Der automatisierte Test nutzt deshalb ausschließlich einen lokalen temporären HTTP-Server; nach dem ersten Laden werden alle Interaktionen bei deaktiviertem Browsernetz geprüft. Die Richtlinie wird nicht verändert. Ein direkter Doppelklicktest in einem normalen lokalen Zielbrowser bleibt separat erforderlich.
 
 Die Struktur `report/` enthält den wartbaren Quellcode. `tools/build_report.py` erzeugt die fertige Einzeldatei mit eingebettetem Datenbestand; sie darf unabhängig vom Rest des Verzeichnisses weitergegeben werden, sofern die Rechte an den übernommenen Inhalten das erlauben.
+
+## Quellen und Freigabeverfahren
+
+`core/engine.js` trennt `runCurrent` (explizit geprüfte aktuelle Einzelregeln) von `runReference` (historische Auditbausteine). Noch offene aktuelle Gesamtverfahren sind gesperrt. Ein Faktorvergleich oder eine Cacheübereinstimmung kann die Gesamtfreigabe nicht setzen.
+
+`tools/import_public_sources.py` importiert zuvor gesicherte öffentliche Gesetzestexte und Tabellen; es führt keine Webseiten aus. Die AMEV-/Bundesbau-PDFs sind nur mit eigenen Zusammenfassungen, Hash und Seitenfundstellen im Quellenregister dokumentiert. Ihre Volltexte sowie später bereitgestellte nichtöffentliche Auftraggeberunterlagen werden nicht automatisch ins Repository aufgenommen.
+
+`tools/build_migration_data.py` erzeugt Nachweismatrix und historische Prüffälle; `tools/verify_core.cjs` protokolliert deren Ergebnis. `tools/build_norms_report.py` erzeugt den lesbaren aktuellen Prüfbericht. Das Paket für GitHub wird mit `python3 tools/package_report.py` erneuert.

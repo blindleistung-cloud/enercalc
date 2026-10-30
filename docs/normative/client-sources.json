@@ -1,0 +1,301 @@
+[
+  {
+    "id": "amev-heat",
+    "title": "AMEV Wärmeversorgungsanlagen – Teil 1",
+    "edition": "2021",
+    "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/Waermeversorgungsanlagen/WVA-Teil1_2021.pdf",
+    "pdfSha256": "1474220af89db6f35e5bcf9d298501f361feaa60e5c52d62b49cee13ba548b03",
+    "pdfPages": 121,
+    "locators": [
+      {
+        "term": "Anwendungsbereich",
+        "pdfPages": [
+          3,
+          8,
+          36,
+          50,
+          81,
+          82,
+          96
+        ],
+        "totalMatchesInPages": 7
+      },
+      {
+        "term": "Heizlast",
+        "pdfPages": [
+          27,
+          33,
+          38,
+          39,
+          40,
+          43,
+          45,
+          52,
+          62,
+          93,
+          95,
+          97,
+          100,
+          112
+        ],
+        "totalMatchesInPages": 14
+      },
+      {
+        "term": "18599",
+        "pdfPages": [
+          62
+        ],
+        "totalMatchesInPages": 1
+      }
+    ],
+    "relevance": "Planung/Auslegung von Wärmeversorgung; Jahresbedarf und Auslegungs-Heizlast getrennt prüfen.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "amev-rlt",
+    "title": "AMEV RLT-Anlagen",
+    "edition": "Stand 01.07.2023",
+    "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/RLT-Anlagen/RLT-Anlagen_Stand_01.07.2023.pdf",
+    "pdfSha256": "f1342a82d01c80cf181dac342efea47cb02405aeb6c6a7a58391834e53e5cf5e",
+    "pdfPages": 132,
+    "locators": [
+      {
+        "term": "Anwendungsbereich",
+        "pdfPages": [
+          4,
+          6,
+          11,
+          29,
+          39,
+          45,
+          66,
+          97
+        ],
+        "totalMatchesInPages": 8
+      },
+      {
+        "term": "18599",
+        "pdfPages": [
+          129
+        ],
+        "totalMatchesInPages": 1
+      },
+      {
+        "term": "SFP",
+        "pdfPages": [
+          31,
+          32
+        ],
+        "totalMatchesInPages": 2
+      }
+    ],
+    "relevance": "Außenluft, Betrieb, Ventilatorleistung, WRG und Auslegungsdaten; konkrete Nutzungsfälle und Einführung fehlen.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "amev-cooling",
+    "title": "AMEV Kälte",
+    "edition": "2026 (ersetzt Kälte 2017 laut Fachseite)",
+    "url": "https://www.amev-online.de/AMEVInhalt/Planen/Maschinenbau-und-Versorgungstechnik/Kaelte_2026/Kaelte_2026.pdf",
+    "pdfSha256": "26f09bb23965e68bba8d4e6094588af3bb9103ab5bd40bb5a22304c20ee8628d",
+    "pdfPages": 68,
+    "locators": [
+      {
+        "term": "Kühllast",
+        "pdfPages": [
+          30,
+          32,
+          38,
+          56,
+          66
+        ],
+        "totalMatchesInPages": 5
+      },
+      {
+        "term": "18599",
+        "pdfPages": [],
+        "totalMatchesInPages": 0
+      },
+      {
+        "term": "Leistungszahl",
+        "pdfPages": [
+          6,
+          15,
+          19,
+          22,
+          32,
+          33,
+          39,
+          53,
+          62,
+          63
+        ],
+        "totalMatchesInPages": 10
+      }
+    ],
+    "relevance": "Kühllastreduktion, Systemwahl, Erzeugung und Betrieb; keine pauschale Gleichsetzung mit der energetischen Monatsbilanz.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "amev-light",
+    "title": "AMEV Beleuchtung",
+    "edition": "Ausgabe 2023, Stand 03/2025",
+    "url": "https://www.amev-online.de/AMEVInhalt/Planen/Elektrotechnik/Beleuchtung/Beleuchtung_2023_Stand_03-25.pdf",
+    "pdfSha256": "faf184267f7862de38d205f3352b54f97d0bf35ca767be09f565accaeeeefe0c",
+    "pdfPages": 102,
+    "locators": [
+      {
+        "term": "18599",
+        "pdfPages": [
+          68,
+          82
+        ],
+        "totalMatchesInPages": 2
+      },
+      {
+        "term": "Wirkungsgradverfahren",
+        "pdfPages": [
+          8,
+          42,
+          94
+        ],
+        "totalMatchesInPages": 3
+      },
+      {
+        "term": "Energiebedarf",
+        "pdfPages": [
+          58,
+          62,
+          68,
+          82
+        ],
+        "totalMatchesInPages": 4
+      }
+    ],
+    "relevance": "LED, Beleuchtungsplanung und energetische Betriebsführung; Projektanforderungen und DIN-Rechenverfahren getrennt führen.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "amev-automation",
+    "title": "AMEV Gebäudeautomation",
+    "edition": "2023",
+    "url": "https://www.amev-online.de/AMEVInhalt/Planen/Gebaeudeautomation/GA/2023-09-11_AMEV_GA2023.pdf",
+    "pdfSha256": "97186c103e73bc5e5b75106c84c470ccaca0458e930f53228277b844c5d390ea",
+    "pdfPages": 165,
+    "locators": [
+      {
+        "term": "18599",
+        "pdfPages": [
+          55,
+          61,
+          72,
+          94,
+          105,
+          106,
+          107,
+          158,
+          163
+        ],
+        "totalMatchesInPages": 9
+      },
+      {
+        "term": "Anwendungsbereich",
+        "pdfPages": [],
+        "totalMatchesInPages": 0
+      },
+      {
+        "term": "Energieeffizienz",
+        "pdfPages": [
+          8,
+          16,
+          17,
+          59,
+          60,
+          64,
+          72,
+          93,
+          95,
+          105,
+          114,
+          156,
+          157,
+          158,
+          162
+        ],
+        "totalMatchesInPages": 15
+      }
+    ],
+    "relevance": "Automation und Betriebsanforderungen einschließlich Einfluss auf energetische Randbedingungen; projektbezogene Festlegungen nötig.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "rbbau-pdf",
+    "title": "RBBau",
+    "edition": "Stand 15.07.2026",
+    "url": "https://www.fib-bund.de/Inhalt/Richtlinien/RBBau/RBBau_Onlinefassung_Stand_15.07.2026.pdf",
+    "pdfSha256": "049480c27c9dcfb24245ab60dc608418560d71697da99f1466f233959467876b",
+    "pdfPages": 33,
+    "locators": [
+      {
+        "term": "Geltungsbereich",
+        "pdfPages": [
+          2,
+          6,
+          11
+        ],
+        "totalMatchesInPages": 3
+      },
+      {
+        "term": "Standardsetzungen",
+        "pdfPages": [
+          8
+        ],
+        "totalMatchesInPages": 1
+      },
+      {
+        "term": "militärischer Bau",
+        "pdfPages": [
+          31
+        ],
+        "totalMatchesInPages": 1
+      }
+    ],
+    "relevance": "Bundesbau-Verfahren und Zuständigkeiten; zusätzliche bzw. abweichende Regelungen im militärischen Bau können erforderlich sein.",
+    "status": "Original-PDF statisch durchsucht und relevante Fundstellen erfasst; vollständige Regelzuordnung und projektspezifische Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "fib-energy",
+    "title": "FIB: Ausstellen von Energieausweisen",
+    "edition": "Öffentliche Fachseite, Abruf 30.10.2026",
+    "url": "https://www.fib-bund.de/Inhalt/Leitfaden/Energieausweise/",
+    "htmlSha256": "af95f8474a5912c142459de9f7df5f0d832ea6b71282fc673f75733588e3e161",
+    "relevance": "Nennt GModG seit 29.07.2026, Änderungen des Berechnungsregelwerks zum 01.01.2027 sowie nur teilweise weiter anwendbaren Leitfaden GEG 2023. Einführungserlasse werden im Bereich FIB intern verortet.",
+    "status": "Aussage der offiziellen Fachseite geprüft; zukünftiges 2027-Verfahren noch nicht freigegeben.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "fib-sustainable",
+    "title": "FIB: Leitfaden Nachhaltiges Bauen / BNB",
+    "edition": "Öffentliche Fachseite, Abruf 30.10.2026",
+    "url": "https://www.fib-bund.de/Inhalt/Leitfaden/NachhaltigesBauen/",
+    "htmlSha256": "09f0a196425287054e7e224b3bfc133a57a452002b067acf68a8f4af215bf79d",
+    "relevance": "Nachhaltigkeitsbewertung, Lebenszyklus und Zielvereinbarung sind von der Gebäude-Betriebsenergiebilanz zu trennen. Je Nutzung/Bauaufgabe einschlägige BNB-Version und Einführung bestimmen.",
+    "status": "Öffentliche Einordnung geprüft; konkrete BNB-Systemvariante und Einführung offen.",
+    "checkedDate": "2026-10-30"
+  },
+  {
+    "id": "fib-internal",
+    "title": "FIB intern – Einführungserlasse und Grundsatzdokumente",
+    "edition": "Zugriff / projektspezifische Freigabe fehlt",
+    "url": "https://www.fachinfoboerse.de/",
+    "relevance": "Die öffentliche FIB verweist für Einführungserlasse und weitere Grundsatzdokumente auf diesen zugangsbeschränkten Bereich. Keine Anmeldung, keine Umgehung und keine Beschaffung interner Bundeswehr-Dokumente vorgenommen.",
+    "status": "In dieser Sitzung nicht zugänglich; relevante fachlich freigegebene Vorgaben vom Auftraggeber benötigt.",
+    "checkedDate": "2026-10-30"
+  }
+]

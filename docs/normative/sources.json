@@ -1,0 +1,261 @@
+[
+  {
+    "id": "geg20",
+    "url": "https://www.gesetze-im-internet.de/geg/__20.html",
+    "retrievedAt": "2026-10-30T08:55:25.933632+00:00",
+    "kind": "public-legislation",
+    "title": "§ 20 GModG - Einzelnorm",
+    "htmlSha256": "3c380b69f990000023733f20d80df0a78c94002ca506ff1e2290e283c72ed4f9",
+    "snapshot": "public/geg20.txt",
+    "table": []
+  },
+  {
+    "id": "geg21",
+    "url": "https://www.gesetze-im-internet.de/geg/__21.html",
+    "retrievedAt": "2026-10-30T08:55:25.934737+00:00",
+    "kind": "public-legislation",
+    "title": "§ 21 GModG - Einzelnorm",
+    "htmlSha256": "1aed1740483709cd746720a7b2aa65f8d660e3980924fef0ba266e895e663426",
+    "snapshot": "public/geg21.txt",
+    "table": []
+  },
+  {
+    "id": "geg22",
+    "url": "https://www.gesetze-im-internet.de/geg/__22.html",
+    "retrievedAt": "2026-10-30T08:55:25.936350+00:00",
+    "kind": "public-legislation",
+    "title": "§ 22 GModG - Einzelnorm",
+    "htmlSha256": "5cefa56d6062fc0e3347e9b54f8c777e0fda4ea2afa8228ba91b5bed962f9234",
+    "snapshot": "public/geg22.txt",
+    "table": []
+  },
+  {
+    "id": "geg4",
+    "url": "https://www.gesetze-im-internet.de/geg/anlage_4.html",
+    "retrievedAt": "2026-10-30T08:55:25.937934+00:00",
+    "kind": "public-legislation",
+    "title": "Anlage 4 GModG - Einzelnorm",
+    "htmlSha256": "74d22ec464529a2420228cd102ca0622230b72201e092f9b01ff32896228bbc1",
+    "snapshot": "public/geg4.txt",
+    "table": [
+      {
+        "number": 1,
+        "carrier": "Heizöl",
+        "value": 1.1
+      },
+      {
+        "number": 2,
+        "carrier": "Erdgas",
+        "value": 1.1
+      },
+      {
+        "number": 3,
+        "carrier": "Flüssiggas",
+        "value": 1.1
+      },
+      {
+        "number": 4,
+        "carrier": "Steinkohle",
+        "value": 1.1
+      },
+      {
+        "number": 5,
+        "carrier": "Braunkohle",
+        "value": 1.2
+      },
+      {
+        "number": 6,
+        "carrier": "Biogas",
+        "value": 1.1
+      },
+      {
+        "number": 7,
+        "carrier": "Bioöl",
+        "value": 1.1
+      },
+      {
+        "number": 8,
+        "carrier": "Holz",
+        "value": 0.2
+      },
+      {
+        "number": 9,
+        "carrier": "netzbezogen",
+        "value": 1.8
+      },
+      {
+        "number": 10,
+        "carrier": "gebäudenah erzeugt (aus Photovoltaik oder Windkraft)",
+        "value": 0.0
+      },
+      {
+        "number": 11,
+        "carrier": "Verdrängungsstrommix für KWK",
+        "value": 2.8
+      },
+      {
+        "number": 12,
+        "carrier": "Erdwärme, Geothermie, Solarthermie, Umgebungswärme",
+        "value": 0.0
+      },
+      {
+        "number": 13,
+        "carrier": "Erdkälte, Umgebungskälte",
+        "value": 0.0
+      },
+      {
+        "number": 14,
+        "carrier": "Abwärme",
+        "value": 0.0
+      },
+      {
+        "number": 16,
+        "carrier": "Siedlungsabfälle",
+        "value": 0.0
+      }
+    ]
+  },
+  {
+    "id": "geg9",
+    "url": "https://www.gesetze-im-internet.de/geg/anlage_9.html",
+    "retrievedAt": "2026-10-30T08:55:25.940717+00:00",
+    "kind": "public-legislation",
+    "title": "Anlage 9 GModG - Einzelnorm",
+    "htmlSha256": "eb4b0243f3ddf2e6f5a197214a0df857fa860f49a2e8f077641c37b5cdb5ddb3",
+    "snapshot": "public/geg9.txt",
+    "table": [
+      {
+        "number": 1,
+        "carrier": "Heizöl",
+        "value": 310.0
+      },
+      {
+        "number": 2,
+        "carrier": "Erdgas",
+        "value": 240.0
+      },
+      {
+        "number": 3,
+        "carrier": "Flüssiggas",
+        "value": 270.0
+      },
+      {
+        "number": 4,
+        "carrier": "Steinkohle",
+        "value": 400.0
+      },
+      {
+        "number": 5,
+        "carrier": "Braunkohle",
+        "value": 430.0
+      },
+      {
+        "number": 6,
+        "carrier": "Biogas",
+        "value": 140.0
+      },
+      {
+        "number": 7,
+        "carrier": "Biogas, gebäudenah erzeugt",
+        "value": 75.0
+      },
+      {
+        "number": 8,
+        "carrier": "Biogenes Flüssiggas",
+        "value": 180.0
+      },
+      {
+        "number": 9,
+        "carrier": "Bioöl",
+        "value": 210.0
+      },
+      {
+        "number": 10,
+        "carrier": "Bioöl, gebäudenah erzeugt",
+        "value": 105.0
+      },
+      {
+        "number": 11,
+        "carrier": "Holz",
+        "value": 20.0
+      },
+      {
+        "number": 12,
+        "carrier": "netzbezogen",
+        "value": 560.0
+      },
+      {
+        "number": 13,
+        "carrier": "gebäudenah erzeugt (aus Photovoltaik oder Windkraft)",
+        "value": 0.0
+      },
+      {
+        "number": 14,
+        "carrier": "Verdrängungsstrommix",
+        "value": 860.0
+      },
+      {
+        "number": 15,
+        "carrier": "Erdwärme, Geothermie, Solarthermie, Umgebungswärme",
+        "value": 0.0
+      },
+      {
+        "number": 16,
+        "carrier": "Erdkälte, Umgebungskälte",
+        "value": 0.0
+      },
+      {
+        "number": 17,
+        "carrier": "Abwärme aus Prozessen",
+        "value": 40.0
+      },
+      {
+        "number": 19,
+        "carrier": "Wärme aus Verbrennung von Siedlungsabfällen (unter pauschaler Berücksichtigung von Hilfsenergie und Stützfeuerung)",
+        "value": 20.0
+      },
+      {
+        "number": 20,
+        "carrier": "Brennstoff: Stein-/Braunkohle",
+        "value": 300.0
+      },
+      {
+        "number": 21,
+        "carrier": "Gasförmige und flüssige Brennstoffe",
+        "value": 180.0
+      },
+      {
+        "number": 22,
+        "carrier": "Erneuerbarer Brennstoff",
+        "value": 40.0
+      },
+      {
+        "number": 23,
+        "carrier": "Brennstoff: Stein-/Braunkohle",
+        "value": 400.0
+      },
+      {
+        "number": 24,
+        "carrier": "Gasförmige und flüssige Brennstoffe",
+        "value": 300.0
+      },
+      {
+        "number": 25,
+        "carrier": "Erneuerbarer Brennstoff",
+        "value": 60.0
+      }
+    ]
+  },
+  {
+    "id": "gegFull",
+    "url": "https://www.gesetze-im-internet.de/geg/BJNR172810020.html",
+    "retrievedAt": "2026-10-30T08:55:25.984845+00:00",
+    "kind": "public-legislation",
+    "title": "GModG - Gesetz zur Einsparung von Energie und zur Modernisierung der W�rmeversorgung in Geb�uden*",
+    "htmlSha256": "3062ef71110c8d3248063caff01d9f825108169b4ccead884d6fffcd82a20748",
+    "snapshot": "public/gegFull.txt",
+    "table": [],
+    "observedLawName": "Gebäudemodernisierungsgesetz (GModG)",
+    "observedAmendment": "Art. 4 G v. 23.7.2026 I Nr. 226 (Angabe des abgerufenen Texts)"
+  }
+]

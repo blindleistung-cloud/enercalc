@@ -38,6 +38,41 @@ def run():
             page.screenshot(path='/tmp/enercalc-overview.png', full_page=True)
             context.set_offline(True)
 
+            page.locator('nav a[data-view=calculate]').click()
+            page.wait_for_selector('#current-rule')
+            expect(page.locator('#current-output')).to_contain_text('1.800')
+            page.locator('#current-rule').select_option('current-emissions')
+            expect(page.locator('#current-output')).to_contain_text('560')
+            page.locator('#carrier-input').select_option('natural-gas')
+            expect(page.locator('#current-output')).to_contain_text('240')
+            with page.expect_download() as event:
+                page.locator('#export-calculation').click()
+            calc=json.loads(pathlib.Path(event.value.path()).read_text())
+            assert calc['usedFactor']==240
+            assert calc['outputs']['emissions']==240
+            assert calc['buildingReady'] is False
+            assert calc['sourceLinks'][0]['url'].endswith('anlage_9.html')
+            page.locator('#asof-input').fill('2027-01-01')
+            expect(page.locator('#current-output [role=alert]')).to_contain_text('2027')
+            assert page.locator('#export-calculation').is_disabled()
+            page.locator('#asof-input').fill('2026-10-30')
+            page.locator('#energy-input').fill('')
+            expect(page.locator('#current-output [role=alert]')).to_contain_text('ungültiger Zahlenwert')
+            assert page.locator('#export-calculation').is_disabled()
+            page.locator('#energy-input').fill('1000')
+            page.screenshot(path='/tmp/enercalc-current-core.png', full_page=True)
+            page.locator('nav a[data-view=norms]').click()
+            expect(page.locator('#content')).to_contain_text('Bundeswehr')
+            expect(page.locator('#content')).to_contain_text('Kälte')
+            assert page.evaluate("ENER_NORM_AUDIT.registry.overall.normativeReady") is False
+            assert page.evaluate("ENER_NORM_AUDIT.registry.targetProfile.status") == 'current-only'
+            with page.expect_download() as event:
+                page.locator('[data-norm-export]').click()
+            norm=json.loads(pathlib.Path(event.value.path()).read_text())
+            assert len(norm['registry']['clientSources'])==9
+            assert norm['checks']['passed']==503
+            page.screenshot(path='/tmp/enercalc-norms.png', full_page=True)
+
             page.locator('nav a[data-view=workbook]').click()
             page.wait_for_selector('#cell-search')
             page.locator('#scope').select_option('all')
@@ -98,12 +133,20 @@ def run():
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             page.locator('button[data-tab=names]').click()
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.locator('nav a[data-view=calculate]').click()
+            page.wait_for_selector('#current-rule')
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.screenshot(path='/tmp/enercalc-current-mobile.png', full_page=True)
+            page.locator('nav a[data-view=norms]').click()
+            expect(page.locator('#content')).to_contain_text('Quellenhierarchie')
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             assert not exceptions, exceptions
             assert all(url.startswith(f'http://127.0.0.1:{server.server_port}/') for url in requests), requests
             assert len(requests) == 1, requests
             print('PASS: desktop/mobile navigation, 179048 embedded cells, filtered search and pagination,')
             print('source links, 18 climates, 44 profiles, VBA source, JSON export, five migration phases.')
             print('PASS: all interactions after initial document load with browser offline; no external requests or JS exceptions.')
+            print('PASS: current carrier conversions, source-linked calculation export, 2027/invalid-input blocks, normative matrix and mobile views.')
             print('LIMIT: direct file:// test blocked by managed Chromium policy; localhost transport used.')
             browser.close()
     finally:

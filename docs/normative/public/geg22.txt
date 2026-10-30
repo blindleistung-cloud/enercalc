@@ -1,0 +1,48 @@
+§ 22 GModG - Einzelnorm
+zurück
+weiter
+Nichtamtliches Inhaltsverzeichnis
+Gesetz zur Einsparung von Energie und zur Modernisierung der W�rmeversorgung in Geb�uden* (Geb�udemodernisierungsgesetz - GModG)
+§ 22
+Primärenergiefaktoren
+(1) Für die Ermittlung des Jahres-Primärenergiebedarfs nach § 20 Absatz 1 oder Absatz 2 und nach § 21 Absatz 1 und 2 sind für den nicht erneuerbaren Anteil die Primärenergiefaktoren der Anlage 4 zu verwenden. Davon abweichend sind in den nachfolgend genannten Fällen folgende Primärenergiefaktoren für den nicht erneuerbaren Anteil zu verwenden:
+1.
+für flüssige oder gasförmige Biomasse kann abweichend von Anlage 4 Nummer 6 und 7 für den nicht erneuerbaren Anteil der Wert 0,3 verwendet werden,
+a)
+wenn die flüssige oder gasförmige Biomasse im unmittelbaren räumlichen Zusammenhang mit dem Gebäude oder mit mehreren Gebäuden, die im räumlichen Zusammenhang stehen, erzeugt wird und
+b)
+diese Gebäude unmittelbar mit der flüssigen oder gasförmigen Biomasse versorgt werden; mehrere Gebäude müssen gemeinsam versorgt werden,
+2.
+für gasförmige Biomasse, die aufbereitet und in das Erdgasnetz eingespeist worden ist (Biomethan) und in zu errichtenden Gebäuden eingesetzt wird, kann abweichend von Anlage 4 Nummer 6 für den nicht erneuerbaren Anteil
+a)
+der Wert 0,7 verwendet werden, wenn die Nutzung des Biomethans in einem Brennwertkessel erfolgt, oder
+b)
+der Wert 0,5 verwendet werden, wenn die Nutzung des Biomethans in einer hocheffizienten KWK-Anlage im Sinne des § 2 Nummer 8a des Kraft-Wärme-Kopplungsgesetzes vom 21. Dezember 2015 (BGBl. I S. 2498), das zuletzt durch Artikel 266 der Verordnung vom 19. Juni 2020 (BGBl. I S. 1328) geändert worden ist, erfolgt, und wenn
+c)
+bei der Aufbereitung und Einspeisung des Biomethans die Voraussetzungen nach Anlage 1 Nummer 1 Buchstabe a bis c des Erneuerbare-Energien-Gesetzes vom 25. Oktober 2008 (BGBl. I S. 2074) in der am 31. Juli 2014 geltenden Fassung erfüllt worden sind, und
+d)
+die Menge des entnommenen Biomethans im Wärmeäquivalent am Ende eines Kalenderjahres der Menge von Gas aus Biomasse entspricht, das an anderer Stelle in das Gasnetz eingespeist worden ist, und Massenbilanzsysteme für den gesamten Transport und Vertrieb des Biomethans von seiner Herstellung über seine Einspeisung in das Erdgasnetz und seinen Transport im Erdgasnetz bis zu seiner Entnahme aus dem Erdgasnetz verwendet worden sind,
+3.
+für gasförmige Biomasse, die unter Druck verflüssigt worden ist (biogenes Flüssiggas) und in zu errichtenden Gebäuden eingesetzt wird, kann abweichend von Anlage 4 Nummer 6 für den nicht erneuerbaren Anteil
+a)
+der Wert 0,7 verwendet werden, wenn die Nutzung des biogenen Flüssiggases in einem Brennwertkessel erfolgt, oder
+b)
+der Wert 0,5 verwendet werden, wenn die Nutzung des biogenen Flüssiggases in einer hocheffizienten KWK-Anlage im Sinne des § 2 Nummer 8a des Kraft-Wärme-Kopplungsgesetzes erfolgt, und wenn
+c)
+die Menge des entnommenen Gases am Ende eines Kalenderjahres der Menge von Gas aus Biomasse entspricht, das an anderer Stelle hergestellt worden ist, und Massenbilanzsysteme für den gesamten Transport und Vertrieb des biogenen Flüssiggases von seiner Herstellung über seine Zwischenlagerung und seinen Transport bis zu seiner Einlagerung in den Verbrauchstank verwendet worden sind,
+4.
+für die Versorgung eines neu zu errichtenden Gebäudes mit aus Erdgas oder Flüssiggas erzeugter Wärme darf abweichend von Anlage 4 Nummer 15 für die in einer hocheffizienten KWK-Anlage im Sinne des § 2 Nummer 8a des Kraft-Wärme-Kopplungsgesetzes erzeugte Wärme für den nicht erneuerbaren Anteil der Wert 0,6 verwendet werden, wenn
+a)
+die Wärmerzeugungsanlage das zu errichtende Gebäude und ein oder mehrere bestehende Gebäude, die mit dem zu errichtenden Gebäude in einem räumlichen Zusammenhang stehen, dauerhaft mit Wärme versorgt und
+b)
+vorhandene mit fossilen Brennstoffen beschickte Heizkessel des oder der mitversorgten bestehenden Gebäude außer Betrieb genommen werden.
+Durch eine Maßnahme nach Satz 2 Nummer 4 darf die Wärmeversorgung des oder der mitversorgten bestehenden Gebäude nicht in der Weise verändert werden, dass die energetische Qualität dieses oder dieser Gebäude verschlechtert wird. Bei Verwendung eines Gemisches aus Erdgas und gasförmiger Biomasse wird der Wert nach Satz 2 Nummer 2 Buchstabe a und b nur auf den energetischen Anteil der gasförmigen Biomasse angewendet. Bei Verwendung eines Gemisches aus biogenem Flüssiggas und Flüssiggas wird der Wert nach Satz 2 Nummer 3 Buchstabe a und b nur auf den energetischen Anteil des biogenen Flüssiggases angewendet.
+(2) Wird ein zu errichtendes Gebäude mit Fernwärme versorgt, kann zur Ermittlung des Jahres-Primärenergiebedarfs nach § 20 Absatz 1 oder Absatz 2 und nach § 21 Absatz 1 und 2 als Primärenergiefaktor der Wert für den nicht erneuerbaren Anteil nach Maßgabe der Sätze 2 bis 4 sowie von Absatz 3 verwendet werden, den das Fernwärmeversorgungsunternehmen für den Wärmeträger in dem Wärmenetz, an das das Gebäude angeschlossen wird, ermittelt und veröffentlicht hat. Der ermittelte und veröffentlichte Wert nach Satz 1 kann verwendet werden, wenn das Fernwärmeversorgungsunternehmen zur Ermittlung des Primärenergiefaktors die zur Erzeugung und Verteilung der Wärme in einem Wärmenetz eingesetzten Brennstoffe und Strom, einschließlich Hilfsenergien, ermittelt, mit den Primärenergiefaktoren der Anlage 4 gewichtet und auf die abgegebene Wärmemenge bezogen sowie die Anwendung dieses Berechnungsverfahrens in der Veröffentlichung angegeben hat. Wird in einem Wärmenetz Wärme genutzt, die von einer Großwärmepumpe mit einer thermischen Leistung von mindestens 500 Kilowatt erzeugt wird, ist abweichend von Anlage 4 für netzbezogenen Strom zum Betrieb der Großwärmepumpe der Primärenergiefaktor für den nicht erneuerbaren Anteil von 1,2 zu verwenden. Wird in einem Wärmenetz Wärme genutzt, die in einer KWK-Anlage erzeugt wird, kann der ermittelte und veröffentlichte Wert nach Satz 1 verwendet werden, wenn das Fernwärmeversorgungsunternehmen zur Ermittlung des Primärenergiefaktors der Wärme aus der KWK-Anlage das Berechnungsverfahren nach DIN V 18599-1: 2018-09 Anhang A Abschnitt A.4 mit den Primärenergiefaktoren der Anlage 4 angewendet und die Anwendung dieser Methode in der Veröffentlichung angegeben hat.
+(3) Liegt der ermittelte und veröffentlichte Wert des Primärenergiefaktors eines Wärmenetzes unter einem Wert von 0,3, ist als Primärenergiefaktor der Wert von 0,3 zu verwenden. Abweichend von Satz 1 darf ein ermittelter und veröffentlichter Wert, der unter 0,3 liegt, verwendet werden, wenn der Wert von 0,3 um den Wert von 0,001 für jeden Prozentpunkt des aus erneuerbaren Energien oder aus Abwärme erzeugten Anteils der in einem Wärmenetz genutzten Wärme verringert wird und das Fernwärmeversorgungsunternehmen dies in der Veröffentlichung angegeben hat.
+(4) Hat das Fernwärmeversorgungsunternehmen den Primärenergiefaktor für den Wärmeträger in dem Wärmenetz, an das das zu errichtende Gebäude angeschlossen wird, nicht ermittelt und veröffentlicht, kann als Primärenergiefaktor der Wert für den nicht erneuerbaren Anteil verwendet werden, der in den nach § 20 Absatz 1 oder Absatz 2 und nach § 21 Absatz 1 und 2 zur Ermittlung des Jahres-Primärenergiebedarfs zu verwendenden Berechnungsverfahren für die genutzte Fernwärme aufgeführt ist.
+(5) Das Bundesministerium für Wirtschaft und Energie wird gemeinsam mit dem Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen das Berechnungsverfahren zur Ermittlung der Primärenergiefaktoren von Wärmenetzen, in denen Wärme genutzt wird, die in KWK-Anlagen erzeugt wird, überprüfen. Dabei wird unter Beachtung des Grundsatzes der Wirtschaftlichkeit die Umstellung des Berechnungsverfahrens auf ein Verfahren zur Ermittlung des Brennstoffanteils für die Wärmeerzeugung untersucht, das der in DIN EN 15316-4-5: 2017-09 Abschnitt 6.2.2.1.6.3 beschriebenen Methode entspricht. In die Untersuchung wird die Ermittlung eines Faktors einbezogen, mit dem der Anteil bestehender Gebäude an den an ein Wärmenetz angeschlossenen Gebäuden berücksichtigt wird. Das Bundesministerium für Wirtschaft und Energie hat gemeinsam mit dem Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen dem Deutschen Bundestag bis zum 31. Dezember 2025 einen Bericht über das Ergebnis der Überprüfung vorzulegen. Der Bericht enthält einen Vorschlag für eine gesetzliche Regelung zur Umstellung des Berechnungsverfahrens ab dem Jahr 2030.
+zum Seitenanfang
+Impressum
+Datenschutz
+Barrierefreiheitserklärung
+Feedback-Formular

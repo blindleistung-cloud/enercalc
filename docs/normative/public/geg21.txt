@@ -1,0 +1,21 @@
+§ 21 GModG - Einzelnorm
+zurück
+weiter
+Nichtamtliches Inhaltsverzeichnis
+Gesetz zur Einsparung von Energie und zur Modernisierung der W�rmeversorgung in Geb�uden* (Geb�udemodernisierungsgesetz - GModG)
+§ 21
+Berechnung des Jahres-Primärenergiebedarfs eines Nichtwohngebäudes
+(1) Für das zu errichtende Nichtwohngebäude und das Referenzgebäude ist der Jahres-Primärenergiebedarf nach DIN V 18599: 2018-09 zu ermitteln.
+(2) Soweit sich bei einem Nichtwohngebäude Flächen hinsichtlich ihrer Nutzung, ihrer technischen Ausstattung, ihrer inneren Lasten oder ihrer Versorgung mit Tageslicht wesentlich unterscheiden, ist das Gebäude nach Maßgabe der DIN V 18599: 2018-09 in Verbindung mit § 18 Absatz 3 für die Berechnung nach Absatz 1 in Zonen zu unterteilen. Die Vereinfachungen zur Zonierung, zur pauschalierten Zuweisung der Eigenschaften der Hüllfläche und zur Ermittlung von tageslichtversorgten Bereichen gemäß DIN V 18599-1: 2018-09 Anhang D dürfen nach Maßgabe der dort angegebenen Bedingungen auch für zu errichtende Nichtwohngebäude verwendet werden.
+(3) Für Nutzungen, die nicht in DIN V 18599-10: 2018-09 aufgeführt sind, kann
+1.
+die Nutzung 17 der Tabelle 5 in DIN V 18599-10: 2018-09 verwendet werden oder
+2.
+eine Nutzung auf der Grundlage der DIN V 18599-10: 2018-09 unter Anwendung gesicherten allgemeinen Wissensstandes individuell bestimmt und verwendet werden.
+Steht bei der Errichtung eines Nichtwohngebäudes die Nutzung einer Zone noch nicht fest, ist nach Satz 1 Nummer 1 zu verfahren. In den Fällen des Satzes 1 Nummer 2 ist die individuell bestimmte Nutzung zu begründen und den Berechnungen beizufügen. Wird bei der Errichtung eines Nichtwohngebäudes in einer Zone keine Beleuchtungsanlage eingebaut, ist eine direkt-indirekte Beleuchtung mit stabförmigen Leuchtstofflampen mit einem Durchmesser von 16 Millimetern und mit einem elektronischen Vorschaltgerät anzunehmen.
+(4) § 20 Absatz 3 bis 6 ist entsprechend anzuwenden.
+zum Seitenanfang
+Impressum
+Datenschutz
+Barrierefreiheitserklärung
+Feedback-Formular

@@ -5,7 +5,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / 'downloads' / 'EnerCalC-Analyse.zip'
 files = [ROOT / name for name in ['index.html', 'README.md', 'requirements-analysis.txt']]
-for folder in ['docs', 'report', 'tools', 'tests']:
+for folder in ['core', 'docs', 'report', 'tools', 'tests']:
     files.extend(p for p in (ROOT / folder).rglob('*')
                  if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc')
 DESTINATION.parent.mkdir(exist_ok=True)
