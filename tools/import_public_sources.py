@@ -43,7 +43,7 @@ def main(folder):
   text='\n'.join(p.parts)
   # Only the title / change-history of the full consolidated document is needed.
   if id=='gegFull':text=text[:text.index('Nichtamtliches Inhaltsverzeichnis\nInhaltsübersicht')]
-  (dest/(id+'.txt')).write_text(text+'\n')
+  (dest/(id+'.txt')).write_text(text.rstrip()+'\n')
   rows=[]
   for row in p.rows:
    if len(row)>=3 and row[0].isdigit():
